@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>服务区域</title>
+        <meta content="telephone=no" name="format-detection" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <meta name="developer" content="somehao" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta name="HandheldFriendly" content="true" />
+        <link rel="stylesheet" href="/Project/MyCard/css/card.css" />
+        <link rel="stylesheet" href="/Project/Public/Css/popWindow.css" />  
+    </head>
+    <body>
+     <div class="dingtou">
+        <div class="style_qy">
+            <ul class="stylexz_qy">
+                <li>
+                    <p class="Province">省份
+                      <span class="xuanze">  
+                        <select name="province" id="province">  
+                            <option value="" class="choose">请选择</option>  
+                        </select>
+                        <span class="xiala1"></span>
+                        <span class="shuxian1"></span>
+                      </span>
+                    </p>
+                    <em></em>
+                </li>
+                <li>
+                    <p class="city">市 
+                      <span class="xuanze">
+                        <select name="city" id="city">  
+                            <option value="" class="choose">请选择</option>  
+                        </select> 
+                        <span class="xiala1"></span>
+                        <span class="shuxian1"></span>
+                      </span>
+                    </p>    
+                    <em></em>
+                </li>
+            </ul>
+        </div>
+        <div class="diqu_qy">
+            <p class="area_qy">请选择 区/县</p>
+            <ul class="city_qy" id="city_qy">
+            </ul>
+        </div>
+        <div style:"height:90px;width:100%"></div>
+        <div class="save_qy">
+            <a class="cancel_choose" onclick="hideThis()">取消</a>
+            <a class="sure_choose">确定</a>
+        </div>
+        <div class="dztk" id="tstk">
+            <div class="sfsc">
+                <p id="neirong"></p>
+                <p><a class="active" onclick="hideTk()">确认</a></p>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="/Project/Public/Js/zepto.min.js"></script>
+    <script>
+        var proId = '';
+        var proName = '';
+        var ciId  = ''; 
+        var ciName = '';
+        var coIds = [];
+        var coNames = [];
+        $("#tstk").hide();
+        $(function(){
+            $.ajax({
+                url: "/MyCard/getProvinces",
+                type: "POST",
+                dataType: "json",
+                success: function(data, status, xhr) {
+                    if(data.status != 1) {
+                        $("#neirong").text("获取数据异常，请稍后再试！");
+                        $("#tstk").show();
+                    }
+                    $.each(data.info, function(i, e) {
+                        var option = $("<option value='"+e.province_id+","+e.province_name+"'>"+e.province_name+"</option>");
+                        $("#province").append(option);
+                    });        
+                }
+            });
+
+            $(".sure_choose").bind('click', function(){
+                if(!proId || !ciId || !coIds[0])
+                {
+                    $("#neirong").text("请选择地区！");
+                    $("#tstk").show();
+                }
+                else
+                {
+                    var str = proId+';'+proName+';'+ciId+';'+ciName+';';
+                    var strHtml = '';
+                    for (var i = coIds.length - 1; i >= 0; i--) {
+                        str += coIds[i]+','+coNames[i]+',';
+                        strHtml += '<span>'+coNames[i]+'</span>';
+                    };
+                    str = str.substring(0,str.length-1);
+                    window.top.nowAreaIds(str, strHtml);
+                }
+
+            });
+        });
+
+        $("#province").on("change", function(event, params) {
+            $("#city option").slice(1).remove();
+            $("city_qy").html('');
+            var pStr = $(this).val();
+            var pArr = pStr.split(",");
+            proId   = pArr[0];
+            proName = pArr[1];
+            ciId = '';
+            ciName = '';
+            $.ajax({
+                url: "/MyCard/getCityByProvinceId",
+                data: {
+                    "provinceId": proId
+                },
+                type: "POST",
+                dataType: "json",
+                success: function(data, status, xhr) {
+                    if(data.status != 1) {
+                        $("#neirong").text("获取数据异常，请稍后再试！");
+                        $("#tstk").show();
+                    }
+                    $.each(data.info, function(i, e) {
+                        var option = $("<option value='"+e.city_id+","+e.city_name+"'>"+e.city_name+"</option>");
+                        $("#city").append(option);
+                    });
+                }
+            });
+        });
+
+        $("#city").on("change", function(event, params) {
+            var cStr = $(this).val();
+            var cArr = cStr.split(",");
+            ciId   = cArr[0];
+            ciName = cArr[1];
+            coIds = [];
+            coNames = [];
+            $.ajax({
+                url: "/MyCard/getCountyByCityId",
+                data: {
+                    "cityId": ciId
+                },
+                type: "POST",
+                dataType: "json",
+                success: function(data, status, xhr) {
+                    if(data.status != 1) {
+                        $("#neirong").text("获取数据异常，请稍后再试！");
+                        $("#tstk").show();
+                    }
+                    else
+                    {
+                        var li = '';
+                        for (var i = data.info.length - 1; i >= 0; i--) {
+                            li += '<li onclick="chose(this)" data-name="'+data.info[i].county_name+'" data-id="'+data.info[i].county_id+'">'+data.info[i].county_name+'<em class="wxuan_qy"></em></li>';
+                            //coIds.push(data.info[i].county_id);
+                            //coNames.push(data.info[i].county_name);
+                        };
+                        $("#city_qy").html(li);
+                    }
+                }
+            });
+        });
+
+        function chose(i){
+            var id = $(i).data('id');
+            var name = $(i).data('name');
+            var len = coIds.length;
+            // alert(len);
+            if($(i).find('em').hasClass("wxuan_qy")){
+                if(len == 5)
+                {
+                    $("#neirong").text("您最多只能选择5个区县！")
+                    $("#tstk").show();
+                }
+                else
+                {
+                    $(i).find('em').removeClass("wxuan_qy");
+                    $(i).find('em').addClass("xuan_qy");
+                    coIds.push(id);
+                    coNames.push(name);
+                }
+            }
+            else
+            {
+                $(i).find('em').removeClass("xuan_qy");
+                $(i).find('em').addClass("wxuan_qy");
+                for(var j = 0; j < len; j++)
+                {
+                    if(coIds[j] == id)
+                    {
+                        coIds.splice(j,1);
+                        coNames.splice(j,1);
+                    }
+                }
+            }
+        }
+
+        function hideTk(){
+            $("#tstk").hide();
+        }
+
+        function hideThis()
+        {
+            window.top.hideIfr('#ifrArea');
+        }
+    </script>
+</html>

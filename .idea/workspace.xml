@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d2b760cb-f81d-4621-8b10-ce58127fb231" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>plug</find>
+      <find>../</find>
+      <find>css</find>
+      <find>../images</find>
+      <find>Blog</find>
+      <find>../js</find>
+      <find>../plug</find>
+      <find>link</find>
+      <find>href</find>
+      <find>js</find>
+      <find>.js</find>
+      <find>src</find>
+      <find>../plugin</find>
+      <find>images</find>
+      <find>Admin</find>
+      <find>../css</find>
+      <find>background</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/App/Tpl/response404.html" />
+        <option value="$PROJECT_DIR$/App/Tpl/Blog/article.html" />
+        <option value="$PROJECT_DIR$/App/Tpl/Blog/about.html" />
+        <option value="$PROJECT_DIR$/App/Tpl/Blog/detail.html" />
+        <option value="$PROJECT_DIR$/App/Tpl/Blog/home.html" />
+        <option value="$PROJECT_DIR$/App/Tpl/Blog/resource.html" />
+        <option value="$PROJECT_DIR$/App/Tpl/Blog/timeline.html" />
+        <option value="$PROJECT_DIR$/App/WorkRecord/2018-01-05.sql" />
+        <option value="$PROJECT_DIR$/App/Conf/base.php" />
+        <option value="$PROJECT_DIR$/App/Lib/Action/HomeAction.class.php" />
+        <option value="$PROJECT_DIR$/App/Tpl/Admin/datalist.html" />
+        <option value="$PROJECT_DIR$/App/Tpl/Admin/index.html" />
+        <option value="$PROJECT_DIR$/App/Tpl/Home/about.html" />
+        <option value="$PROJECT_DIR$/App/Tpl/Admin/main.html" />
+        <option value="$PROJECT_DIR$/App/Tpl/Admin/login.html" />
+        <option value="$PROJECT_DIR$/App/Project/Admin/Css/login.css" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="10" />
+    <option name="y" value="43" />
+    <option name="width" value="1382" />
+    <option name="height" value="837" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Conf" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Action" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Project" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Project" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Project" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Project" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Images" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Project" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Project" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tpl" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tpl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www.juanblog.cn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www.juanblog.cn" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Tpl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Home" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="8474d92995350737e143856adab5ae41.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/www.juanblog.cn/App/Runtime/Cache/8474d92995350737e143856adab5ae41.php" />
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.8474d92995350737e143856adab5ae41.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d2b760cb-f81d-4621-8b10-ce58127fb231" name="Default" comment="" />
+      <created>1515133696320</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1515133696320</updated>
+      <workItem from="1515133697540" duration="7934000" />
+      <workItem from="1515219492968" duration="3744000" />
+      <workItem from="1515224052547" duration="125000" />
+      <workItem from="1515236851625" duration="13000" />
+      <workItem from="1515236868334" duration="2000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="11818000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="10" y="43" width="1382" height="837" extended-state="0" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2431259" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Admin/login.html" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Admin/index.html" />
+    <entry file="file://$PROJECT_DIR$/App/Project/Admin/Css/index.css" />
+    <entry file="file://$PROJECT_DIR$/App/Project/Admin/Css/login.css" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Admin/datalist.html" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Home/timeline.html" />
+    <entry file="file://$PROJECT_DIR$/App/Conf/base.php" />
+    <entry file="file://$PROJECT_DIR$/App/Lib/Action/HomeAction.class.php" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/response404.html" />
+    <entry file="file://$PROJECT_DIR$/App/index.php" />
+    <entry file="file://$PROJECT_DIR$/App/Lib/Action/rememberFile.sql" />
+    <entry file="file://$PROJECT_DIR$/App/WorkRecord/2018-01-05.sql" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Home/article.html" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Home/detail.html" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Home/home.html" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Home/resource.html" />
+    <entry file="file://$PROJECT_DIR$/App/Lib/Action/HomeAction.class.php" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Home/timeline.html" />
+    <entry file="file://$PROJECT_DIR$/App/Conf/base.php" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Home/about.html" />
+    <entry file="file://$PROJECT_DIR$/App/Project/Admin/Images/background.jpg" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Admin/login.html" />
+    <entry file="file://$PROJECT_DIR$/App/Project/Admin/Js/pagesize.js" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Admin/datalist.html" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Admin/index.html" />
+    <entry file="file://$PROJECT_DIR$/App/Project/Admin/Css/index.css" />
+    <entry file="file://$PROJECT_DIR$/App/Tpl/Admin/main.html" />
+    <entry file="file://$PROJECT_DIR$/App/Project/Admin/Css/login.css" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,59 @@
+/**
+ * 前台个人中心css -> lj [2018/01/26]
+ */
+
+
+/* 左侧边栏样式 */
+.layui-nav-tree .layui-nav-item a {
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    font-size: 16px;
+    width: auto;
+    position: relative;
+}
+
+/* 内容主体区域 */
+.layui-body{
+    margin-top: 10px;
+    left: 35%;
+}
+
+.layui-body .layui-form .layui-form-item .layui-form-label{
+    font-size: 20px;
+    /*text-align: center;*/
+}
+3
+.layui-body .layui-form .layui-form-item .layui-input-block{
+    font-size: 16px;
+    width: 50px;
+}
+
+
+
+/* 文本域 */
+.layui-body .layui-form .layui-form-item .layui-textarea{
+    width: 50%;
+}
+
+/* 下拉窗口 */
+.layui-body .layui-form .layui-form-item .layui-form-select{
+    width: 50%;
+}
+
+.layui-body .layui-form .layui-form-item .user-defined{
+    width: 50%;
+}
+
+.layui-body .layui-form .layui-form-item #user-defined{
+    width: 80%;
+    /*width: 53%;*/
+}
+
+
+
+
+
+
+
+
