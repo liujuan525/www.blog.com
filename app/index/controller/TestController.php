@@ -13,6 +13,12 @@ use think\Validate;
 
 class TestController extends PublicController
 {
+    // 资源分享首页展示 -> lj [2018/01/13]
+    // public function index()
+    // {
+    //     return $this->fetch();
+    // }
+    
     public function upload()
     {
         $data = $this->getParameter(['imageurl']);

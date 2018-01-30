@@ -13,7 +13,7 @@ use think\Db;
 class UserController extends PublicController
 {
     /**
-     * 添加用户信息 -> lj [2018/01/23]
+     * 用户注册 -> lj [2018/01/23]
      */
     public function addUserInfo(UserInfo $user)
     {

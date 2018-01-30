@@ -1,8 +1,67 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:57:"/Users/Svn/www.blog.com/app/index/view/website/index.html";i:1517324738;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517321200;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
 ﻿
 <!-- 引入头部文件 -->
-{include file="Common/header"/}
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; Charset=gb2312">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>关于网络技术的博客网站</title>
+    <link rel="shortcut icon" href="/public//index/Images/Logo_40.png" type="image/x-icon">
+    <!--Layui-->
+    <link href="/public//plug/layui/css/layui.css" rel="stylesheet" />
+    <!--font-awesome-->
+    <link href="/public//plug/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!--全局样式表-->
+    <link href="/public//index/Css/global.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="blog-nav layui-header">
+        <div class="blog-container">
+            <a href="javascript:;" class="blog-user layui-hide">
+                <img src="/public//index/Images/Absolutely.jpg" alt="Absolutely" title="Absolutely" />
+            </a>
+            <!-- 不落阁 -->
+            <a class="blog-logo" href="home.html">不落阁</a>
+            <!-- 导航菜单 -->
+            <ul class="layui-nav" lay-filter="nav">
+                <li class="layui-nav-item layui-this">
+                    <a href="home.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="article.html"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="resource.html"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="timeline.html"><i class="fa fa-hourglass-half fa-fw"></i>&nbsp;点点滴滴</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+                </li>
+                <!-- 此处为后期添加 -> lj [2018/01/25] -->
+                <li class="layui-nav-item">
+                    <?php if($info){ 
+                        echo '<a href="personalcenter.html">&nbsp;个人中心</a>';
+                    }else{
+                        echo '<a href="register.html">&nbsp;登录/注册</a>';
+                    } ?>
+                </li>
+                <!-- 此处为后期添加 -> lj [2018/01/25] -->
+            </ul>
+            <!-- 手机和平板的导航开关 -->
+            <a class="blog-navicon" href="javascript:;">
+                <i class="fa fa-navicon"></i>
+            </a>
+        </div>
+    </nav>
 <!-- 本页样式表 -->
-<link href="__PUBLIC__/index/Css/about.css" rel="stylesheet" />
+<link href="/public//index/Css/about.css" rel="stylesheet" />
 
 <!-- 主体（一般只改变这里的内容） -->
 <div class="blog-body">
@@ -23,7 +82,7 @@
                     <div class="layui-tab-item">
                         <div class="aboutinfo">
                             <div class="aboutinfo-figure">
-                                <img src="__PUBLIC__/index/Images/Logo_100.png" alt="不落阁" />
+                                <img src="/public//index/Images/Logo_100.png" alt="不落阁" />
                             </div>
                             <p class="aboutinfo-nickname">不落阁</p>
                             <p class="aboutinfo-introduce">一个.NET程序员的个人博客，记录博主学习和成长之路，分享.NET方面技术和源码</p>
@@ -54,7 +113,7 @@
                     <div class="layui-tab-item">
                         <div class="aboutinfo">
                             <div class="aboutinfo-figure">
-                                <img src="__PUBLIC__/index/Images/Absolutely.jpg" alt="Absolutely" />
+                                <img src="/public//index/Images/Absolutely.jpg" alt="Absolutely" />
                             </div>
                             <p class="aboutinfo-nickname">Absolutely</p>
                             <p class="aboutinfo-introduce">一枚90后程序员，.NET开发工程师，主攻B/S架构，略懂Web前端</p>
@@ -82,7 +141,7 @@
                     <div class="layui-tab-item">
                         <div class="aboutinfo">
                             <div class="aboutinfo-figure">
-                                <img src="__PUBLIC__/index/Images/handshake.png" alt="友情链接" />
+                                <img src="/public//index/Images/handshake.png" alt="友情链接" />
                             </div>
                             <p class="aboutinfo-nickname">友情链接</p>
                             <p class="aboutinfo-introduce">Name：不落阁&nbsp;&nbsp;&nbsp;&nbsp;Site：www.lyblogs.cn</p>
@@ -125,7 +184,7 @@
                     <div class="layui-tab-item">
                         <div class="aboutinfo">
                             <div class="aboutinfo-figure">
-                                <img src="__PUBLIC__/index/Images/messagewall.png" alt="留言墙" />
+                                <img src="/public//index/Images/messagewall.png" alt="留言墙" />
                             </div>
                             <p class="aboutinfo-nickname">留言墙</p>
                             <p class="aboutinfo-introduce">本页面可留言、吐槽、提问。欢迎灌水，杜绝广告！</p>
@@ -151,7 +210,7 @@
                                         <ul class="blog-comment">
                                             <li>
                                                 <div class="comment-parent">
-                                                    <img src="__PUBLIC__/index/Images/Logo_40.png" alt="不落阁" />
+                                                    <img src="/public//index/Images/Logo_40.png" alt="不落阁" />
                                                     <div class="info">
                                                         <span class="username">不落阁</span>
                                                     </div>
@@ -162,14 +221,14 @@
                                                 </div>
                                                 <hr />
                                                 <div class="comment-child">
-                                                    <img src="__PUBLIC__/index/Images/Absolutely.jpg" alt="Absolutely" />
+                                                    <img src="/public//index/Images/Absolutely.jpg" alt="Absolutely" />
                                                     <div class="info">
                                                         <span class="username">Absolutely</span><span>这是用户回复内容</span>
                                                     </div>
                                                     <p class="info"><span class="time">2017-03-18 18:26</span></p>
                                                 </div>
                                                 <div class="comment-child">
-                                                    <img src="__PUBLIC__/index/Images/Absolutely.jpg" alt="Absolutely" />
+                                                    <img src="/public//index/Images/Absolutely.jpg" alt="Absolutely" />
                                                     <div class="info">
                                                         <span class="username">Absolutely</span><span>这是第二个用户回复内容</span>
                                                     </div>
@@ -200,6 +259,51 @@
 </div>
     
 <!-- 引入尾部文件 -->
-{include file="Common/footer"/}
+    <!-- 底部 -->
+<footer class="blog-footer">
+        <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.lyblogs.cn">不落阁</a><span>Design By LY</span></p>
+        <p><a href="http://www.miibeian.gov.cn/" target="_blank">蜀ICP备16029915号-1</a></p>
+    </footer>
+    <!--侧边导航-->
+    <ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
+        <li class="layui-nav-item layui-this">
+            <a href="home.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="article.html"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="resource.html"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="timeline.html"><i class="fa fa-road fa-fw"></i>&nbsp;点点滴滴</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+        </li>
+    </ul>
+    <!--分享窗体-->
+    <div class="blog-share layui-hide">
+        <div class="blog-share-body">
+            <div style="width: 200px;height:100%;">
+                <div class="bdsharebuttonbox">
+                    <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                    <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                    <a class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--遮罩-->
+    <div class="blog-mask animated layui-hide"></div>
+    <!-- layui.js -->
+    <script src="/public//plug/layui/layui.js"></script>
+    <!-- 全局脚本 -->
+    <script src="/public//index/Js/global.js"></script>
+    <!-- jquery.js -->
+    <!-- <script type="text/javascript" src="/public//plug/jquery-2.1.4.min.js"></script> -->
+</body>
+</html>
 <!-- 本页脚本 -->
-<script src="__PUBLIC__/index/Js/about.js"></script>
+<script src="/public//index/Js/about.js"></script>

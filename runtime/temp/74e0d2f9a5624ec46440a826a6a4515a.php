@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"/Users/Svn/www.blog.com/app/index/view/index/index.html";i:1517321255;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517321200;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:57:"/Users/Svn/www.blog.com/app/index/view/article/index.html";i:1517324535;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517321200;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
 
 <!-- 引入头部文件 -->
 <!DOCTYPE html>
@@ -60,71 +60,20 @@
             </a>
         </div>
     </nav>
-
-<!-- 本页样式表 -->
-<link href="/public//index/Css/home.css" rel="stylesheet" />
-
+<!--本页样式表-->
+<link href="/public//index/Css/article.css" rel="stylesheet" />
 
 <!-- 主体（一般只改变这里的内容） -->
 <div class="blog-body">
-    <!-- canvas -->
-    <canvas id="canvas-banner" style="background: #393D49;"></canvas>
-    <!--为了及时效果需要立即设置canvas宽高，否则就在home.js中设置-->
-    <script type="text/javascript">
-        var canvas = document.getElementById('canvas-banner');
-        canvas.width = window.document.body.clientWidth - 10;//减去滚动条的宽度
-        if (screen.width >= 992) {
-            canvas.height = window.innerHeight * 1 / 3;
-        } else {
-            canvas.height = window.innerHeight * 2 / 7;
-        }
-    </script>
-    <!-- 这个一般才是真正的主体内容 -->
     <div class="blog-container">
+        <blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow">
+            <a href="home.html" title="网站首页">网站首页</a>
+            <a><cite>文章专栏</cite></a>
+        </blockquote>
         <div class="blog-main">
-            <!--左边文章列表-->
             <div class="blog-main-left">
-                <div class="article shadow">
-                    <div class="article-left">
-                        <img src="/public//index/Images/cover/201703181909057125.jpg" alt="基于laypage的layui扩展模块（pagesize.js）！" />
-                    </div>
-                    <div class="article-right">
-                        <div class="article-title">
-                            <a href="detail.html">基于laypage的layui扩展模块（pagesize.js）！</a>
-                        </div>
-                        <div class="article-abstract">
-                            该模块主要是针对当前版本laypage没有页容量控制功能而制作，使用该模块后即可实现每页显示多少条数据的控制！本人原创，但是可能有可能只对本人的分页写法有用！
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="article-footer">
-                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-03-18</span>
-                        <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;Absolutely</span>
-                        <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#">Web前端</a></span>
-                        <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;0</span>
-                        <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;4</span>
-                    </div>
-                </div>
-                <div class="article shadow">
-                    <div class="article-left">
-                        <img src="/public//index/Images/cover/201703181909057125.jpg" alt="基于laypage的layui扩展模块（pagesize.js）！" />
-                    </div>
-                    <div class="article-right">
-                        <div class="article-title">
-                            <a href="detail.html">基于laypage的layui扩展模块（pagesize.js）！</a>
-                        </div>
-                        <div class="article-abstract">
-                            该模块主要是针对当前版本laypage没有页容量控制功能而制作，使用该模块后即可实现每页显示多少条数据的控制！本人原创，但是可能有可能只对本人的分页写法有用！
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="article-footer">
-                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-03-18</span>
-                        <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;Absolutely</span>
-                        <span><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#">Web前端</a></span>
-                        <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;0</span>
-                        <span class="article-viewinfo"><i class="fa fa-commenting"></i>&nbsp;4</span>
-                    </div>
+                <div class="shadow" style="text-align:center;font-size:16px;padding:40px 15px;background:#fff;margin-bottom:15px;">
+                    未搜索到与【<span style="color: #FF5722;">keywords</span>】有关的文章，随便看看吧！
                 </div>
                 <div class="article shadow">
                     <div class="article-left">
@@ -253,84 +202,65 @@
                     </div>
                 </div>
             </div>
-            <!--右边小栏目-->
             <div class="blog-main-right">
-                <div class="blogerinfo shadow">
-                    <!-- 新增页面显示的判断 -> lj [2-18/01/25] -->
-                    <?php 
-                        if($info){
-                            echo '<div class="blogerinfo-figure">
-                                <img src="/public//index/Images/Absolutely.jpg" alt="Absolutely" />
-                            </div>';
-                        }
-                     ?>
-                    <p class="blogerinfo-nickname"><?php echo $info['userName']; ?></p>
-                    <p class="blogerinfo-introduce"><?php echo $info['email']; ?></p>
-                    <p class="blogerinfo-location"><?php echo $info['mobile']; ?></p>
-                    <hr />
-                    <!-- 新增页面显示的判断 -> lj [2-18/01/25] -->
+                <div class="blog-search">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <div class="search-keywords  shadow">
+                                <input type="text" name="keywords" lay-verify="required" placeholder="输入关键词搜索" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="search-submit  shadow">
+                                <a class="search-btn" lay-submit="formSearch" lay-filter="formSearch"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div></div><!--占位-->
+                <div class="article-category shadow">
+                    <div class="article-category-title">分类导航</div>
+                    <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">ASP.NET MVC</a>
+                    <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">SQL Server</a>
+                    <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">Entity Framework</a>
+                    <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">Web前端</a>
+                    <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">C#基础</a>
+                    <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">杂文随笔</a>
+                    <div class="clear"></div>
+                </div>
                 <div class="blog-module shadow">
-                    <div class="blog-module-title">热文排行</div>
+                    <div class="blog-module-title">作者推荐</div>
                     <ul class="fa-ul blog-module-ul">
                         <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">Web安全之跨站请求伪造CSRF</a></li>
                         <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">ASP.NET MVC 防范跨站请求伪造（CSRF）</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">常用正则表达式</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">EF CodeFirst数据迁移常用指令</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">浅谈.NET Framework基元类型</a></li>
                         <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">C#基础知识回顾-扩展方法</a></li>
                         <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">一步步制作时光轴（一）（HTML篇）</a></li>
                         <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">一步步制作时光轴（二）（CSS篇）</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">一步步制作时光轴（三）（JS篇）</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">写了个Win10风格快捷菜单！</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">ASP.NET MVC自定义错误页</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">ASP.NET MVC制作404跳转（非302和200）</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">基于laypage的layui扩展模块（pagesize.js）！</a></li>
                     </ul>
                 </div>
                 <div class="blog-module shadow">
-                    <div class="blog-module-title">最近分享</div>
+                    <div class="blog-module-title">随便看看</div>
                     <ul class="fa-ul blog-module-ul">
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="http://pan.baidu.com/s/1c1BJ6Qc" target="_blank">Canvas</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="http://pan.baidu.com/s/1kVK8UhT" target="_blank">pagesize.js</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://pan.baidu.com/s/1mit2aiW" target="_blank">时光轴</a></li>
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="https://pan.baidu.com/s/1nuAKF81" target="_blank">图片轮播</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">一步步制作时光轴（一）（HTML篇）</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">ASP.NET MVC制作404跳转（非302和200）</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">ASP.NET MVC 防范跨站请求伪造（CSRF）</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">一步步制作时光轴（三）（JS篇）</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">基于laypage的layui扩展模块（pagesize.js）！</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">一步步制作时光轴（二）（CSS篇）</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">写了个Win10风格快捷菜单！</a></li>
+                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">常用正则表达式</a></li>
                     </ul>
                 </div>
-                <div class="blog-module shadow">
-                    <div class="blog-module-title">一路走来</div>
-                    <dl class="footprint">
-                        <dt>2017年03月12日</dt>
-                        <dd>新增留言回复功能！人人都可参与回复！</dd>
-                        <dt>2017年03月10日</dt>
-                        <dd>不落阁2.0基本功能完成，正式上线！</dd>
-                        <dt>2017年03月09日</dt>
-                        <dd>新增文章搜索功能！</dd>
-                        <dt>2017年02月25日</dt>
-                        <dd>QQ互联接入网站，可QQ登陆发表评论与留言！</dd>
-                    </dl>
-                </div>
-                <div class="blog-module shadow">
-                    <div class="blog-module-title">后台记录</div>
-                    <dl class="footprint">
-                        <dt>2017年03月16日</dt>
-                        <dd>分页新增页容量控制</dd>
-                        <dt>2017年03月12日</dt>
-                        <dd>新增管家提醒功能</dd>
-                        <dt>2017年03月10日</dt>
-                        <dd>新增Win10快捷菜单</dd>
-                    </dl>
-                </div>
-                <div class="blog-module shadow">
-                    <div class="blog-module-title">友情链接</div>
-                    <ul class="blogroll">
-                        <li><a target="_blank" href="http://www.layui.com/" title="Layui">Layui</a></li>
-                        <li><a target="_blank" href="http://www.pagemark.cn/" title="页签">页签</a></li>
-                    </ul>
-                </div>
+                <!--右边悬浮 平板或手机设备显示-->
+                <div class="category-toggle"><i class="fa fa-chevron-left"></i></div>
             </div>
             <div class="clear"></div>
         </div>
     </div>
 </div>
     
-
 <!-- 引入尾部文件 -->
     <!-- 底部 -->
 <footer class="blog-footer">
@@ -378,6 +308,3 @@
     <!-- <script type="text/javascript" src="/public//plug/jquery-2.1.4.min.js"></script> -->
 </body>
 </html>
-<!-- 本页脚本 -->
-<script src="/public//index/Js/home.js"></script>
-    

@@ -26,7 +26,7 @@ return [
     'register' => 'index/User/register', // 新用户注册
     'indexLogin' => 'index/User/login', // 新用户注册
     'userLogin' => 'index/User/userLogin', // 用户登录
-    'personalCenter' => 'index/User/personalCenter', // 用户个人中心
+    'personalcenter' => 'index/User/personalCenter', // 用户个人中心
     'securesetting' => 'index/User/secure', // 用户个人中心
 
     // 地址模块

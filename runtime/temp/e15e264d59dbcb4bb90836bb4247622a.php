@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/user/personalCenter.html";i:1517319362;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台个人中心页面 -> lj [2018/01/26] -->
 <html>
@@ -6,13 +7,13 @@
     <title>不落阁个人中心</title>
                 <!-- 以下为css文件 -->
     <!--Layui-->
-    <link href="__PUBLIC__/plug/layui/css/layui.css" rel="stylesheet" />
+    <link href="/public//plug/layui/css/layui.css" rel="stylesheet" />
     <!--font-awesome-->
-    <link href="__PUBLIC__/plug/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/public//plug/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <!--全局样式表-->
-    <link href="__PUBLIC__/index/Css/global.css" rel="stylesheet" />
+    <link href="/public//index/Css/global.css" rel="stylesheet" />
     <!-- 本页样式表 -->
-    <link href="__PUBLIC__/index/Css/personalcenter.css" rel="stylesheet" />
+    <link href="/public//index/Css/personalcenter.css" rel="stylesheet" />
 </head>
 <body class="layui-layout-body">
     <div class="layui-layout layui-layout-admin">
@@ -40,7 +41,7 @@
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">
-                    <img src="__PUBLIC__/index/Images/Absolutely.jpg" class="layui-nav-img">
+                    <img src="/public//index/Images/Absolutely.jpg" class="layui-nav-img">
                     小白
                 </a>
                 </li>
@@ -110,9 +111,9 @@
                             <div class="layui-input-block">
                                 <select name="province" id="province">
                                     <option value="">请选择</option>
-                                    {foreach $province as $info}
-                                    <option value="{$info.province_id}">{$info.province_name}</option>
-                                    {/foreach}
+                                    <?php foreach($province as $info): ?>
+                                    <option value="<?php echo $info['province_id']; ?>"><?php echo $info['province_name']; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
@@ -179,11 +180,11 @@
    <!--遮罩-->
     <div class="blog-mask animated layui-hide"></div>
     <!-- layui.js -->
-    <script src="__PUBLIC__/plug/layui/layui.js"></script>
+    <script src="/public//plug/layui/layui.js"></script>
     <!-- 全局脚本 -->
-    <script src="__PUBLIC__/index/Js/global.js"></script>
+    <script src="/public//index/Js/global.js"></script>
     <!-- jquery.js -->
-    <script type="text/javascript" src="__PUBLIC__/plug/jquery-2.1.4.min.js"></script> 
+    <script type="text/javascript" src="/public//plug/jquery-2.1.4.min.js"></script> 
     <script>
         // layui.use('upload',function(){
         //     var $ = layui.jquery;

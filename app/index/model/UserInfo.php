@@ -5,6 +5,7 @@
  */
 namespace app\index\model;
 use think\Model;
+use think\Loader;
 
 class UserInfo extends Model
 {

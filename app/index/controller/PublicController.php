@@ -5,6 +5,7 @@
  */
 namespace app\index\controller;
 use think\Controller;
+use think\Db;
 
 class PublicController extends Controller 
 {
@@ -26,6 +27,27 @@ class PublicController extends Controller
         return $data;
     }
 
+    /**
+     * 根据sessionid判断公共模板部分页面跳转 -> lj [2018/01/30]
+     */
+    public function index()
+    {
+        // 获取用户uid
+        $uid = session('uid');
+        if($uid){
+            $info = Db::table('blog_user_info')
+                            -> where('id',$uid)
+                            -> find();
+            if($info){
+                $this->assign('info',$info);
+            }else{
+                $this->assign('info',[]);
+            }
+        }else{
+            $this->assign('info',0);
+        }
+        return $this->fetch();
+    }
 
 
 
