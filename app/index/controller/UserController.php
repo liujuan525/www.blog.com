@@ -98,17 +98,26 @@ class UserController extends PublicController
      */
     public function personalCenter()
     {
+        $uid = session('uid');
+        $info = Db::table('blog_user_info') -> where('id',$uid) -> find();
         // // 获取省信息
         $province = Db::connect('DB_ADDRESS') -> table('province') -> select();
         // // 获取市信息
         // $city = Db::connect('DB_ADDRESS') -> table('city') -> select();
         // // 获取县/区信息
         // $country = Db::connect('DB_ADDRESS') -> table('country') -> select();
-
+        $this->assign('userinfo',$info);
         $this->assign('province',$province);
         // $this->assign('cityinfo',$city);
         // $this->assign('countryinfo',$country);
         return $this->fetch();
+    }
+
+    public function loginOut()
+    {
+        // 清除sessionid
+        session('uid',NULL);
+        $this->redirect('/home');
     }
 
     public function register()

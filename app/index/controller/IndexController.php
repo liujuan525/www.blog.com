@@ -6,7 +6,6 @@ namespace app\index\controller;
 use app\index\controller\PublicController;
 use think\Session;
 use think\Db;
-// use think\Exception;
 
 class IndexController extends PublicController
 {   

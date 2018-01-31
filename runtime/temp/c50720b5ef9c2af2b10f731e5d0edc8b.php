@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:55:"/Users/Svn/www.blog.com/app/index/view/user/secure.html";i:1517306708;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:55:"/Users/Svn/www.blog.com/app/index/view/user/secure.html";i:1517369667;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台安全设置页面 -> lj [2018/01/28] -->
 <html>
@@ -52,19 +52,7 @@
         </div>
 
     <!-- 左侧导航区域  -->
-        <!-- 下面代码为选项卡方式 -->
         <div class="layui-side layui-bg-black">
-            <!-- <div class="layui-tab">
-                <ul class="layui-nav layui-nav-tree">
-                    <ul class="layui-tab-title">
-                        <li class="layui-nav-item layui-show">基本资料</li>
-                        <li class="layui-nav-item">安全设置</li>
-                    </ul>
-                </ul>
-                
-            </div> -->
-
-            <!-- 以下代码为链接方式 -->
             <div class="layui-side-scroll">
                 <ul class="layui-nav layui-nav-tree" lay-filter="test">
                     <li class="layui-nav-item layui-nav-itemed">
@@ -79,8 +67,7 @@
 
     
     <!-- 内容主题区域  -->
-        <div class="layui-body layui-bg-gray">
-            <!-- <form class="layui-form layui-form-pane" action=""> -->
+        <div class="layui-body layui-bg-gray" style="margin-top:5%;">
             <form class="layui-form" action="">
                 <!-- 原密码 -->
                 <div class="layui-form-item">
@@ -112,8 +99,6 @@
         <div class="layui-footer">
             <p class="layui-bg-gray" style="text-align: center;font-size: 18px;font-weight: bold;">最终解释权归 www.blog.com 所有</p>
         </div>
-
-
     </div>
 
 
@@ -124,8 +109,6 @@
     <script src="/public//plug/layui/layui.js"></script>
     <!-- 全局脚本 -->
     <script src="/public//index/Js/global.js"></script>
-    <!-- 本页脚本 -->
-    <script src="/public//index/Js/personalcenter.js"></script>
     <!-- jquery.js -->
     <!-- <script type="text/javascript" src="/public//plug/jquery-2.1.4.min.js"></script> --> 
 </body>

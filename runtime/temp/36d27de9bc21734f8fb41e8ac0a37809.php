@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:57:"/Users/Svn/www.blog.com/app/index/view/user/register.html";i:1517306708;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:57:"/Users/Svn/www.blog.com/app/index/view/user/register.html";i:1517368677;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台用户注册页面 -> lj [2018/01/26] -->
 <html>
@@ -17,51 +17,65 @@
 
     <body class="beg-login-bg">
         <div class="beg-login-box">
-            <fieldset class="layui-elem-field layui-field-title" style="border-color: #979797;padding-left: 106px;">
-                <legend class="c-header">不落阁用户注册</legend>
-            </fieldset>
-            <!-- 用户登录页面 -->
-            <a class="blog-logo" href="indexLogin.html">如果您已注册,请点击此处登录</a>
+            <div class="register-style">
+                <fieldset class="layui-elem-field layui-field-title" style="border-color: #979797;padding-left: 106px;">
+                    <legend class="c-header">不落阁用户注册</legend>
+                    
+                </fieldset>
+                <!-- 用户登录页面 -->
+                <!-- <a class="blog-logo" href="indexLogin.html">如果您已注册,请点击此处登录</a> -->
+                
 
-            <div class="beg-login-main">
-                <form action="index.html" class="layui-form" method="post">
-                    <input name="" type="hidden" value="" />
+                <div class="beg-login-main">
+                    <form action="index.html" class="layui-form" method="post">
+                        <input name="" type="hidden" value="" />
 
-                    <div class="layui-form-item">
-                        <label class="beg-login-icon">
-                                <i class="layui-icon icon-bg"></i>
-                            </label>
-                        <input type="text" name="userName" lay-verify="userName" autocomplete="off" placeholder="请输入账号" class="layui-input c-text" id="userName">
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="beg-login-icon">
-                                <i class="layui-icon icon-lock"></i>
-                            </label>
-                        <input type="password" name="password" lay-verify="password" autocomplete="off" placeholder="请输入密码" class="layui-input c-text" id="password">
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="beg-login-icon">
-                                <i class="layui-icon icon-lock"></i>
-                            </label>
-                        <input type="password" name="repassword" lay-verify="password" autocomplete="off" placeholder="请再次输入密码" class="layui-input c-text" id="repassWord">
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="beg-login-icon">
-                                <i class="layui-icon icon-lock"></i>
-                            </label>
-                        <input type="text" name="mobile" lay-verify="required|phone|number" autocomplete="off" placeholder="请输入手机号" class="layui-input c-text" id="mobile">
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="beg-login-icon">
-                                <i class="layui-icon icon-lock"></i>
-                            </label>
-                        <input type="email" name="email" lay-verify="required|email" autocomplete="off" placeholder="请输入邮箱地址" class="layui-input c-text" id="email">
-                    </div>
-                    <div class="layui-form-item">
-                        <button lay-submit lay-filter="login" class="layui-btn layui-btn-primary c-btn" id="login">提交</button>
-                    </div>
-                </form>
+                        <div class="layui-form-item">
+                            <label class="beg-login-icon">
+                                    <i class="layui-icon icon-bg"></i>
+                                </label>
+                            <input type="text" name="userName" lay-verify="userName" autocomplete="off" placeholder="请输入账号" class="layui-input c-text" id="userName">
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="beg-login-icon">
+                                    <i class="layui-icon icon-lock"></i>
+                                </label>
+                            <input type="password" name="password" lay-verify="password" autocomplete="off" placeholder="请输入密码" class="layui-input c-text" id="password">
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="beg-login-icon">
+                                    <i class="layui-icon icon-lock"></i>
+                                </label>
+                            <input type="password" name="repassword" lay-verify="password" autocomplete="off" placeholder="请再次输入密码" class="layui-input c-text" id="repassWord">
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="beg-login-icon">
+                                    <i class="layui-icon icon-lock"></i>
+                                </label>
+                            <input type="text" name="mobile" lay-verify="required|phone|number" autocomplete="off" placeholder="请输入手机号" class="layui-input c-text" id="mobile">
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="beg-login-icon">
+                                    <i class="layui-icon icon-lock"></i>
+                                </label>
+                            <input type="email" name="email" lay-verify="required|email" autocomplete="off" placeholder="请输入邮箱地址" class="layui-input c-text" id="email">
+                        </div>
+                        <div class="layui-form-item">
+                            <button lay-submit lay-filter="login" class="layui-btn layui-btn-primary c-btn" id="login">提交</button>
+                        </div>
+                    </form>
+                </div>
             </div>
+            <!-- 两个div之间加一条竖线 -->
+            <div class="centerdiv"></div>
+            <div class="login-style">
+                <fieldset class="layui-elem-field layui-field-title" style="border-color: #979797;padding-left: 106px;">
+                    <legend class="c-header">不落阁用户登录</legend>
+                </fieldset>
+                <a class="blog-logo" href="indexLogin.html">如果您已注册,请点击此处登录</a>
+            </div>
+        </div>
+            
         </div>
         <script type="text/javascript" src="/public//plug/layui/layui.js"></script>
         <script type="text/javascript" src="/public//plug/jquery-2.1.4.min.js"></script>

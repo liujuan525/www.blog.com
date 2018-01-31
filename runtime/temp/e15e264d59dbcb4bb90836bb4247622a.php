@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/user/personalCenter.html";i:1517319362;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/user/personalCenter.html";i:1517369799;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台个人中心页面 -> lj [2018/01/26] -->
 <html>
@@ -42,11 +42,11 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">
                     <img src="/public//index/Images/Absolutely.jpg" class="layui-nav-img">
-                    小白
+                    <?php echo $userinfo['userName']; ?>
                 </a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="">退出登录</a>
+                    <a href="loginOut">退出登录</a>
                 </li>
             </ul>
         </div>
@@ -70,13 +70,13 @@
 
     
     <!-- 内容主题区域  -->
-        <div class="layui-body layui-bg-gray">
+        <div class="layui-body layui-bg-gray" style="margin-top:3%;">
             <form class="layui-form" action="">
                 <!-- 用户名 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户名</label>
                     <div class="layui-input-block">
-                        <input type="text" name="userName" required lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input user-defined">
+                        <input type="text" name="userName" required lay-verify="required" class="layui-input user-defined" value="<?php echo (isset($userinfo['userName']) && ($userinfo['userName'] !== '')?$userinfo['userName']:'请输入用户名'); ?>">
                     </div>
                 </div> 
                 <!-- 头像 -->
@@ -91,14 +91,14 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">邮箱</label>
                     <div class="layui-input-block">
-                        <input type="email" name="email" required lay-verify="required email" placeholder="请输入邮箱" autocomplete="off" class="layui-input user-defined">
+                        <input type="email" name="email" required lay-verify="required email" class="layui-input user-defined" value="<?php echo (isset($userinfo['email']) && ($userinfo['email'] !== '')?$userinfo['email']:'请输入邮箱'); ?>">
                     </div>
                 </div> 
                 <!-- 手机号 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">手机号</label>
                     <div class="layui-input-block">
-                        <input type="phone" name="phone" required lay-verify="required phone" placeholder="请输入手机号" autocomplete="off" class="layui-input user-defined">
+                        <input type="phone" name="phone" required lay-verify="required phone" class="layui-input user-defined" value="<?php echo (isset($userinfo['mobile']) && ($userinfo['mobile'] !== '')?$userinfo['mobile']:'请输入手机号'); ?>">
                     </div>
                 </div> 
 
@@ -139,7 +139,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label"></label>
                         <div class="layui-input-block" style="width:500px">
-                            <input type="text" name="address" placeholder="请输入详细地址" autocomplete="off" class="layui-input" id="user-defined">
+                            <input type="text" name="address" class="layui-input" id="user-defined" value="<?php echo (isset($userinfo['address']) && ($userinfo['address'] !== '')?$userinfo['address']:'请输入详细地址'); ?>">
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
                 <div class="layui-form-item layui-form-text">
                     <label class="layui-form-label">个人描述</label>
                     <div class="layui-input-block">
-                        <textarea name="description" placeholder="请用简单的一句话描述自己" class="layui-textarea"></textarea>
+                        <textarea name="description" class="layui-textarea" value="<?php echo (isset($userinfo['description']) && ($userinfo['description'] !== '')?$userinfo['description']:'请用简单的一句话描述自己'); ?>"></textarea>
                     </div>
                 </div>
                 <!-- 提交修改或者放弃修改 -->
@@ -223,7 +223,6 @@
 
                     },'json');
             });
-        });
     </script>
 
 </body>

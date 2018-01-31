@@ -4,26 +4,48 @@
 }
 
 .beg-login-box {
-    width: 450px;
+    width: 750px;
     height: 450px;
-    /*height: 310px;*/
-    margin: 8% auto;
-    /*margin: 15% auto;*/
+    margin: 15% auto;
     background-color: grey;
-    /*background-color: #FFFFFF;*/
     border-radius: 3px;
     color: aliceblue;
     padding-top: 20px;
+    overflow: hidden;
 }
+
+.beg-login-box .register-style {
+    width:440px;
+    height: 450px;
+    float:left;
+}
+
+.beg-login-box .login-style {
+    width:290px;
+    height:450px;
+    float:right;
+}
+
+/*两个div之间的竖线*/
+.centerdiv{  
+    float:left;  
+    width:20px;  
+    border-right: 1px dashed #393D49;  
+    padding-bottom:1600px;  /*关键*/  
+    margin-bottom:-1600px;  /*关键*/  
+} 
+
 
 .blog-logo {
         position: absolute;
-        top: 160px;
-        left: 31%;
-        width: 50%;
+        /*top: 110px;*/
+        /*top: 350px;*/
+        /*left: 40%;*/
+        /*width: 50%;*/
+        /*right:25%;*/
         text-align: center;
-        margin: 0 auto;
-        line-height: 64px;
+        margin: 80px auto;
+        line-height: 74px;
         font-size: 20px;
         color: #3FC5C4;
         font-weight: bold;

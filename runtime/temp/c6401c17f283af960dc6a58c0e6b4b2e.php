@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"/Users/Svn/www.blog.com/app/index/view/record/index.html";i:1517324481;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517321200;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:56:"/Users/Svn/www.blog.com/app/index/view/record/index.html";i:1517324481;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517363685;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
 ﻿
 <!-- 引入头部文件 -->
 <!DOCTYPE html>
@@ -47,7 +47,7 @@
                 <!-- 此处为后期添加 -> lj [2018/01/25] -->
                 <li class="layui-nav-item">
                     <?php if($info){ 
-                        echo '<a href="personalcenter.html">&nbsp;个人中心</a>';
+                        echo '<a href="personalcenter.html"><i class="layui-icon" style="font-size:18px">&#xe60b;</i>&nbsp;个人中心</a>';
                     }else{
                         echo '<a href="register.html">&nbsp;登录/注册</a>';
                     } ?>
