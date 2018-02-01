@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:57:"/Users/Svn/www.blog.com/app/index/view/user/register.html";i:1517368677;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:57:"/Users/Svn/www.blog.com/app/index/view/user/register.html";i:1517384526;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台用户注册页面 -> lj [2018/01/26] -->
 <html>

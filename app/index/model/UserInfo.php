@@ -21,7 +21,9 @@ class UserInfo extends Model
     public function add($data)
     {
         $validate = Loader::validate('UserInfo');
-        if(!$validate -> check($data)){
+        $validate -> scene('add',['userName','password','repassWord','mobile','email']);
+        if(!$validate -> scene('add') -> check($data)){
+        // if(!$validate -> check($data)){
             return $validate -> getError();
         }
     }
@@ -35,6 +37,19 @@ class UserInfo extends Model
         // 定义场景
         $validate -> scene('login',['userName','password']);
         if(!$validate -> scene('login') -> check($data)){
+            return $validate -> getError();
+        }
+    }
+
+    /**
+     * 修改登录密码 -> lj [2018/01/31]
+     */
+    public function changePass($data)
+    {
+        $validate = validate('UserInfo');
+        // 定义场景
+        $validate -> scene('updatepass',['password','newpassword']);
+        if(!$validate -> scene('updatepass') -> check($data)){
             return $validate -> getError();
         }
     }

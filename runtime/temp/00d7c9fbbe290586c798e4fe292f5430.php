@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/User/personalcenter.html";i:1517452086;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台个人中心页面 -> lj [2018/01/26] -->
 <html>
@@ -6,13 +7,13 @@
     <title>不落阁个人中心</title>
                 <!-- 以下为css文件 -->
     <!--Layui-->
-    <link href="__PUBLIC__/plug/layui/css/layui.css" rel="stylesheet" />
+    <link href="/public//plug/layui/css/layui.css" rel="stylesheet" />
     <!--font-awesome-->
-    <link href="__PUBLIC__/plug/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/public//plug/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <!--全局样式表-->
-    <link href="__PUBLIC__/index/Css/global.css" rel="stylesheet" />
+    <link href="/public//index/Css/global.css" rel="stylesheet" />
     <!-- 本页样式表 -->
-    <link href="__PUBLIC__/index/Css/personalcenter.css" rel="stylesheet" />
+    <link href="/public//index/Css/personalcenter.css" rel="stylesheet" />
 </head>
 <body class="layui-layout-body">
     <div class="layui-layout layui-layout-admin">
@@ -40,8 +41,8 @@
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">
-                    <img src="__PUBLIC__/index/Images/Absolutely.jpg" class="layui-nav-img">
-                    {$userinfo.userName}
+                    <img src="/public//index/Images/Absolutely.jpg" class="layui-nav-img">
+                    <?php echo $userinfo['userName']; ?>
                 </a>
                 </li>
                 <li class="layui-nav-item">
@@ -74,7 +75,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户名</label>
                     <div class="layui-input-block">
-                        <input type="text" name="userName" required lay-verify="required" class="layui-input user-defined" value="{$userinfo.userName|default='请输入用户名'}">
+                        <input type="text" name="userName" required lay-verify="required" class="layui-input user-defined" value="<?php echo (isset($userinfo['userName']) && ($userinfo['userName'] !== '')?$userinfo['userName']:'请输入用户名'); ?>">
                     </div>
                 </div> 
                 <!-- 头像 -->
@@ -89,14 +90,14 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">邮箱</label>
                     <div class="layui-input-block">
-                        <input type="email" name="email" required lay-verify="required email" class="layui-input user-defined" value="{$userinfo.email|default='请输入邮箱'}">
+                        <input type="email" name="email" required lay-verify="required email" class="layui-input user-defined" value="<?php echo (isset($userinfo['email']) && ($userinfo['email'] !== '')?$userinfo['email']:'请输入邮箱'); ?>">
                     </div>
                 </div> 
                 <!-- 手机号 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">手机号</label>
                     <div class="layui-input-block">
-                        <input type="phone" name="phone" required lay-verify="required phone" class="layui-input user-defined" value="{$userinfo.mobile|default='请输入手机号'}">
+                        <input type="phone" name="phone" required lay-verify="required phone" class="layui-input user-defined" value="<?php echo (isset($userinfo['mobile']) && ($userinfo['mobile'] !== '')?$userinfo['mobile']:'请输入手机号'); ?>">
                     </div>
                 </div> 
                 <!-- 出生日期 -->
@@ -116,9 +117,9 @@
                             <div class="layui-input-block">
                                 <select name="province" id="province"  lay-filter="sheng">
                                     <option value="">请选择</option>
-                                    {foreach $province as $info}
-                                    <option value="{$info.province_id}">{$info.province_name}</option>
-                                    {/foreach}
+                                    <?php foreach($province as $info): ?>
+                                    <option value="<?php echo $info['province_id']; ?>"><?php echo $info['province_name']; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
@@ -128,6 +129,16 @@
                         <div class="layui-input-block">
                             <select name="city" id="city" lay-filter="shi">
                                 <option value="">请选择</option>
+                                <?php 
+                                    if($city){
+                                        foreach($city as $info){
+                                            echo '<option value=$info["city_id"]>$info["city_name"]</option>';
+                                        }
+                                    }
+                                ?>
+                                <!-- <?php if(($city)): foreach($city as $info): ?>
+                                <option value="<?php echo $info['city_id']; ?>"><?php echo $info['city_name']; ?></option>
+                                <?php endforeach; endif; ?> -->
                             </select>
                         </div>
                     </div>
@@ -144,7 +155,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label"></label>
                         <div class="layui-input-block" style="width:500px">
-                            <input type="text" name="address" class="layui-input" id="user-defined" value="{$userinfo.address|default='请输入详细地址'}">
+                            <input type="text" name="address" class="layui-input" id="user-defined" value="<?php echo (isset($userinfo['address']) && ($userinfo['address'] !== '')?$userinfo['address']:'请输入详细地址'); ?>">
                         </div>
                     </div>
                 </div>
@@ -160,7 +171,7 @@
                 <div class="layui-form-item layui-form-text">
                     <label class="layui-form-label">个人描述</label>
                     <div class="layui-input-block">
-                        <textarea name="description" class="layui-textarea" value="{$userinfo.description|default='请用简单的一句话描述自己'}"></textarea>
+                        <textarea name="description" class="layui-textarea" value="<?php echo (isset($userinfo['description']) && ($userinfo['description'] !== '')?$userinfo['description']:'请用简单的一句话描述自己'); ?>"></textarea>
                     </div>
                 </div>
                 <!-- 提交修改或者放弃修改 -->
@@ -185,11 +196,11 @@
    <!--遮罩-->
     <div class="blog-mask animated layui-hide"></div>
     <!-- layui.js -->
-    <script src="__PUBLIC__/plug/layui/layui.js"></script>
+    <script src="/public//plug/layui/layui.js"></script>
     <!-- 全局脚本 -->
-    <script src="__PUBLIC__/index/Js/global.js"></script>
+    <script src="/public//index/Js/global.js"></script>
     <!-- jquery.js -->
-    <script src="__PUBLIC__/index/Js/personalcenter.js"></script> 
+    <script src="/public//index/Js/personalcenter.js"></script> 
 
 </body>
 </html>

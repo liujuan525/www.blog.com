@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/user/personalCenter.html";i:1517369799;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/user/personalCenter.html";i:1517463893;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台个人中心页面 -> lj [2018/01/26] -->
 <html>
@@ -67,7 +67,6 @@
                 </ul>
             </div>
         </div>
-
     
     <!-- 内容主题区域  -->
         <div class="layui-body layui-bg-gray" style="margin-top:3%;">
@@ -101,6 +100,13 @@
                         <input type="phone" name="phone" required lay-verify="required phone" class="layui-input user-defined" value="<?php echo (isset($userinfo['mobile']) && ($userinfo['mobile'] !== '')?$userinfo['mobile']:'请输入手机号'); ?>">
                     </div>
                 </div> 
+                <!-- 出生日期 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">生日</label>
+                    <div class="layui-input-block">
+                        <input type="datetime" name="phone" lay-verify="date" class="layui-input user-defined" placeholder="请选择日期" id="birthday">
+                    </div>
+                </div>
 
                 <!-- 用户地址 -->
                 <div class="layui-form-item">
@@ -109,7 +115,7 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label">省</label>
                             <div class="layui-input-block">
-                                <select name="province" id="province">
+                                <select name="province" id="province"  lay-filter="sheng">
                                     <option value="">请选择</option>
                                     <?php foreach($province as $info): ?>
                                     <option value="<?php echo $info['province_id']; ?>"><?php echo $info['province_name']; ?></option>
@@ -121,7 +127,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">市</label>
                         <div class="layui-input-block">
-                            <select name="city" id="city">
+                            <select name="city" id="city" lay-filter="shi">
                                 <option value="">请选择</option>
                             </select>
                         </div>
@@ -160,9 +166,9 @@
                 </div>
                 <!-- 提交修改或者放弃修改 -->
                 <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo" id="submit">提交</button>
-                        <button type="reset" class="layui-btn" layui-btn id="reset">重置</button>
+                    <div class="layui-input-block" style="left:18%;">
+                        <!-- <button type="button" class="layui-btn" lay-submit lay-filter="formDemo" id="submit">提交</button> -->
+                        <button type="button" class="layui-btn" id="submit">提交</button>
                     </div>
                     
                 </div>
@@ -184,46 +190,7 @@
     <!-- 全局脚本 -->
     <script src="/public//index/Js/global.js"></script>
     <!-- jquery.js -->
-    <script type="text/javascript" src="/public//plug/jquery-2.1.4.min.js"></script> 
-    <script>
-        // layui.use('upload',function(){
-        //     var $ = layui.jquery;
-        //     var upload = layui.upload;
-        //      // 上传图片
-        //     var imageurl = $('#upimage').val(); 
-        //     upload.render({
-        //         elem:'#upimage',
-        //         url:'upload',
-        //         data:{imageurl:imageurl},
-        //         done:function(res)
-        //         {
-        //             // 上传完毕回调
-        //             console.log(res)
-        //         },
-        //         error:function()
-        //         {
-        //             // 请求异常回调
-        //         }
-        //     });
-
-            $("#province").change(function(data,param){
-                // alert(1);
-                var pid = $(this).val();
-                // console.log(pid);
-                // alert(pid);
-                $.post(
-                    'getCityByPid', 
-                    {"pid":pid}, 
-                    function(result){
-                        for(cinfo in result){
-                            var cioption = "<option value='"+cinfo.city_id+"'>"+cinfo.city_name+"</optoon>";
-                            $("#city").append(cioption);
-                            console.log(pid);
-                        }
-
-                    },'json');
-            });
-    </script>
+    <script src="/public//index/Js/personalcenter.js"></script> 
 
 </body>
 </html>

@@ -29,12 +29,17 @@ return [
     'personalcenter' => 'index/User/personalCenter', // 用户个人中心 -> 基本设置
     'securesetting' => 'index/User/secure', // 用户个人中心 -> 安全设置
     'loginOut' => 'index/User/loginOut', // 用户个人中心 -> 退出登录
+    'changePass' => 'index/User/changePassword', // 用户个人中心 -> 安全设置(修改密码)
 
     // 地址模块
     'getProvince' => 'index/Address/getProvince', // 获取省份信息
     'getCityByPid' => 'index/Address/getCityByPid', // 根据省id获取市信息
+    'getCountryByCid' => 'index/Address/getCountryByCid', // 根据市id获取县区信息
+
+
 
     'upload' => 'index/Test/upload', // 根据省id获取市信息
+    'testlayui' => 'index/Test/testLayer', // 根据省id获取市信息
 
 
 

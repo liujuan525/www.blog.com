@@ -17,18 +17,23 @@
             <div class="beg-login-main">
                 <form action="home.html" class="layui-form" method="post">
                     <input name="" type="hidden" value="" />
+                    <!-- 用户名 -->
                     <div class="layui-form-item">
                         <label class="beg-login-icon">
                                 <i class="layui-icon icon-bg"></i>
                             </label>
                         <input type="text" name="userName" lay-verify="userName" autocomplete="off" placeholder="请输入账号" class="layui-input c-text" id="userName">
                     </div>
+                    <!-- 密码 -->
                     <div class="layui-form-item">
                         <label class="beg-login-icon">
                                 <i class="layui-icon icon-lock"></i>
                             </label>
                         <input type="password" name="password" lay-verify="password" autocomplete="off" placeholder="请输入密码" class="layui-input c-text" id="password">
                     </div>
+                    <!-- 验证码 -->
+
+
                     <div class="layui-form-item">
                         <button type="button" lay-submit lay-filter="login" class="layui-btn layui-btn-primary c-btn" id="login">登录</button>
                     </div>

@@ -49,6 +49,16 @@ class PublicController extends Controller
         return $this->fetch();
     }
 
+    /**
+     * 获取验证码 -> lj [2018/01/31]
+     */
+    public function getCaptcha()
+    {
+        $captcha = new Captcha();
+        return $captcha -> entry();
+        // dump($captcha -> entry());
+    }
+
 
 
 }

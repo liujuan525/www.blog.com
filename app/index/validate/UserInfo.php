@@ -14,6 +14,7 @@ class UserInfo extends Validate
         ['repassWord','require|confirm:password','密码不能为空|两次输入的密码不一致'],
         ['mobile','require|mobile','手机号不能为空|手机号格式错误'],
         ['email','email','邮箱格式错误'],
+        ['newpassword','require|different:password','修改的密码不能为空|两次输入的密码不能一致'],
     ];
 
 

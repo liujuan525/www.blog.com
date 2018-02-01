@@ -100,24 +100,54 @@ class UserController extends PublicController
     {
         $uid = session('uid');
         $info = Db::table('blog_user_info') -> where('id',$uid) -> find();
-        // // 获取省信息
+        // 获取省信息
         $province = Db::connect('DB_ADDRESS') -> table('province') -> select();
-        // // 获取市信息
-        // $city = Db::connect('DB_ADDRESS') -> table('city') -> select();
-        // // 获取县/区信息
-        // $country = Db::connect('DB_ADDRESS') -> table('country') -> select();
+        
         $this->assign('userinfo',$info);
         $this->assign('province',$province);
-        // $this->assign('cityinfo',$city);
-        // $this->assign('countryinfo',$country);
         return $this->fetch();
     }
 
+    /**
+     * 个人中心退出登录 -> lj [2018/01/31]
+     */
     public function loginOut()
     {
         // 清除sessionid
         session('uid',NULL);
         $this->redirect('/home');
+    }
+
+    /**
+     * 修改用户密码 -> lj [2018/01/31]
+     */
+    public function changePassword(UserInfo $user)
+    {
+        // 校验数据
+        $data = $this->getParameter(['password','newpassword']);
+        $result = $user -> changePass($data);
+        if($result){
+            return json(['status'=>10006,'msg'=>$result]);
+        }
+        // 获取sessionid
+        $uid = session('uid');
+        $info = Db::table('blog_user_info') 
+                        -> where('id',$uid) -> find();
+        // 修改用户密码
+        $originPass = PublicMethod::encryptPass($data['password']);
+
+        if($originPass != $info['password']){
+            return json(['status'=>10007,'msg'=>'密码有误']);
+        }else{
+            $newPass = PublicMethod::encryptPass($data['newpassword']);
+            $updateResult = Db::table('blog_user_info') 
+                                -> update(['password'=>$newPass,'id'=>$uid]);
+            if($updateResult){
+                return json(['status'=>1,'msg'=>'修改密码成功']);
+            }else{
+                return json(['status'=>10008,'msg'=>'修改密码失败']);
+            }
+        }
     }
 
     public function register()
@@ -130,8 +160,14 @@ class UserController extends PublicController
         return $this->fetch();
     }
 
+    /**
+     * 个人中心安全设置 -> lj [2018/01/31]
+     */
     public function secure()
     {
+        $uid = session('uid');
+        $info = Db::table('blog_user_info') -> where('id',$uid) -> find();
+        $this->assign('userinfo',$info);
         return $this->fetch();
     }
 
