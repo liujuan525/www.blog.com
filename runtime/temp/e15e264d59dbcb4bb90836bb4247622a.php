@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/user/personalCenter.html";i:1517463893;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/user/personalCenter.html";i:1517551345;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台个人中心页面 -> lj [2018/01/26] -->
 <html>
@@ -81,10 +81,7 @@
                 <!-- 头像 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">上传头像</label>
-                    <div class="layui-upload-drag" id="upimage">
-                        <i class="layui-icon" style="font-size: 30px;">&#xe67c;</i>
-                        <p>点击上传,或将文件拖拽到此处 </p>
-                    </div>
+                    <input class="layui-icon" type="file" name="image" id="upimage">
                 </div> 
                 <!-- 邮箱 -->
                 <div class="layui-form-item">
@@ -104,7 +101,11 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">生日</label>
                     <div class="layui-input-block">
+                        <?php if(!(empty($userinfo['birthdate']) || (($userinfo['birthdate'] instanceof \think\Collection || $userinfo['birthdate'] instanceof \think\Paginator ) && $userinfo['birthdate']->isEmpty()))): ?>
+                        <input type="datetime" name="phone" id="birthday" lay-verify="date" class="layui-input user-defined" value="<?php echo $userinfo['birthdate']; ?>">
+                        <?php else: ?>
                         <input type="datetime" name="phone" lay-verify="date" class="layui-input user-defined" placeholder="请选择日期" id="birthday">
+                        <?php endif; ?>
                     </div>
                 </div>
 
@@ -117,9 +118,11 @@
                             <div class="layui-input-block">
                                 <select name="province" id="province"  lay-filter="sheng">
                                     <option value="">请选择</option>
-                                    <?php foreach($province as $info): ?>
+                                    <?php foreach($province as $info): if($userinfo['province'] == $info['province_name']): ?>
+                                    <option value="<?php echo $info['province_id']; ?>" selected><?php echo $info['province_name']; ?></option>
+                                        <?php else: ?>
                                     <option value="<?php echo $info['province_id']; ?>"><?php echo $info['province_name']; ?></option>
-                                    <?php endforeach; ?>
+                                        <?php endif; endforeach; ?>
                                 </select>
                             </div>
                         </div>
@@ -128,7 +131,11 @@
                         <label class="layui-form-label">市</label>
                         <div class="layui-input-block">
                             <select name="city" id="city" lay-filter="shi">
-                                <option value="">请选择</option>
+                                <?php if(!(empty($userinfo['city']) || (($userinfo['city'] instanceof \think\Collection || $userinfo['city'] instanceof \think\Paginator ) && $userinfo['city']->isEmpty()))): ?>
+                                    <option value="" selected><?php echo $userinfo['city']; ?></option>
+                                <?php else: ?>
+                                    <option value="">请选择</option>
+                                <?php endif; ?>
                             </select>
                         </div>
                     </div>
@@ -136,8 +143,12 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">县/区</label>
                         <div class="layui-input-block">
-                            <select name="country" id="country">
+                            <select name="country" id="country" lay-filter="qu">
+                                <?php if(!(empty($userinfo['country']) || (($userinfo['country'] instanceof \think\Collection || $userinfo['country'] instanceof \think\Paginator ) && $userinfo['country']->isEmpty()))): ?>
+                                <option value="" selected><?php echo $userinfo['country']; ?></option>
+                                <?php else: ?>
                                 <option value="">请选择</option>
+                                <?php endif; ?>
                             </select>
                         </div>
                     </div> 
@@ -145,23 +156,34 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label"></label>
                         <div class="layui-input-block" style="width:500px">
-                            <input type="text" name="address" class="layui-input" id="user-defined" value="<?php echo (isset($userinfo['address']) && ($userinfo['address'] !== '')?$userinfo['address']:'请输入详细地址'); ?>">
+                            <input type="text" name="address" class="layui-input" id="user-defined" placeholder="请输入详细地址" value="<?php echo !empty($userinfo['address'])?$userinfo['address']: ''; ?>">
                         </div>
                     </div>
                 </div>
                 <!-- 性别 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">性别</label>
-                    <div class="layui-input-block">
-                        <input type="radio" name="sex" value="男" title="男" checked="checked">
+                    <div class="layui-input-block" id="sex" lay-filter="sex">
+                        <?php switch($userinfo['sex']): case "0": ?>
+                        <input type="radio" name="sex" value="未知" title="未知" checked>
+                        <input type="radio" name="sex" value="男" title="男">
                         <input type="radio" name="sex" value="女" title="女">
+                        <?php break; case "1": ?>
+                        <input type="radio" name="sex" value="未知" title="未知">
+                        <input type="radio" name="sex" value="男" title="男">
+                        <input type="radio" name="sex" value="女" title="女" checked>
+                        <?php break; case "2": ?>
+                        <input type="radio" name="sex" value="未知" title="未知">
+                        <input type="radio" name="sex" value="男" title="男">
+                        <input type="radio" name="sex" value="女" title="女" checked>
+                        <?php break; endswitch; ?>
                     </div>
                 </div>
                                 <!-- 个人描述 -->
                 <div class="layui-form-item layui-form-text">
                     <label class="layui-form-label">个人描述</label>
                     <div class="layui-input-block">
-                        <textarea name="description" class="layui-textarea" value="<?php echo (isset($userinfo['description']) && ($userinfo['description'] !== '')?$userinfo['description']:'请用简单的一句话描述自己'); ?>"></textarea>
+                        <textarea name="description" class="layui-textarea" placeholder="请用简单的一句话描述自己" id="description"><?php echo !empty($userinfo['description'])?$userinfo['description']: ''; ?></textarea>
                     </div>
                 </div>
                 <!-- 提交修改或者放弃修改 -->

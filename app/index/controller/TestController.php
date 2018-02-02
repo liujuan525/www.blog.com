@@ -15,7 +15,11 @@ class TestController extends PublicController
 {
     public function testLayer()
     {
-        return $this->fetch('/layuitest');
+        $str = 'Users/Svn/www.blog.com/app/upload/Images/20180202/12c7ef0e20e3553daf2e7dd843688e7d.jpg ';
+        $preg = "/^[0-9]+/";
+        $j = preg_match($preg,$str);
+        return $j;
+        // return $this->fetch('/layuitest');
     }
 
     // 资源分享首页展示 -> lj [2018/01/13]

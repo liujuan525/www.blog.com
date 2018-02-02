@@ -9,6 +9,9 @@ use think\Db;
 
 class PublicController extends Controller 
 {
+    // 定义用户头像保存路径
+    const PORTRAIT_SAVE_PATH = "app/upload/Images/"; 
+
     // 构造函数
     public function __construct()
     {
@@ -50,14 +53,23 @@ class PublicController extends Controller
     }
 
     /**
+     * 更新修改时间 -> lj [2018/02/02]
+     */
+    protected function updateTime($id,$table)
+    {
+        Db::table("$table") -> where('id',$id) -> update(['updateTime' => now()]);
+    }
+
+    /**
      * 获取验证码 -> lj [2018/01/31]
      */
     public function getCaptcha()
     {
         $captcha = new Captcha();
         return $captcha -> entry();
-        // dump($captcha -> entry());
     }
+
+
 
 
 

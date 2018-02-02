@@ -13,6 +13,6 @@ define("APP_NAME", 'www.blog.com');
 define('APP_DEBUG', TRUE);
 // 绑定模块
 define('BIND_MODULE','index');
-
+// ROOT_PATH -> /Users/Svn/www.blog.com/
 
 ?>

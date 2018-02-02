@@ -54,6 +54,18 @@ class UserInfo extends Model
         }
     }
 
+    /**
+     * 修改用户信息 -> lj [2018/02/02]
+     */
+    public function modifyInfo($data)
+    {
+        $validate = Loader::validate('UserInfo');
+        $validate -> scene('updateInfo',['userName','mobile','email']);
+        if(!$validate -> scene('updateInfo') -> check($data)){
+            return $validate -> getError();
+        }
+    }
+
 
 
 

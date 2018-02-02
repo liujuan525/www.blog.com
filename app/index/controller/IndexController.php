@@ -10,7 +10,10 @@ use think\Db;
 class IndexController extends PublicController
 {   
     
-
+    public function testTest()
+    {
+        return $this->fetch('/test');
+    }
 
 
 
