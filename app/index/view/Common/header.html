@@ -43,12 +43,18 @@
                 </li>
                 <!-- 此处为后期添加 -> lj [2018/01/25] -->
                 <li class="layui-nav-item">
-                    <?php if($info){ 
-                        echo '<a href="personalcenter.html"><i class="layui-icon" style="font-size:18px">&#xe60b;</i>&nbsp;个人中心</a>';
-                    }else{
-                        echo '<a href="register.html">&nbsp;登录/注册</a>';
-                    } ?>
+                {notempty name="$info"}
+                    <a href="personalcenter.html"><i class="layui-icon" style="font-size:18px">&#xe60b;</i>&nbsp;个人中心</a>
+                {else/}
+                <a href="register.html">&nbsp;登录/注册</a>
+                {/notempty}
                 </li>
+                <!-- 退出登录 -->
+                {notempty name="$info.id"}
+                <li class="layui-nav-item">
+                    <a href="loginOut">退出登录</a>
+                </li>
+                {/notempty}
                 <!-- 此处为后期添加 -> lj [2018/01/25] -->
             </ul>
             <!-- 手机和平板的导航开关 -->

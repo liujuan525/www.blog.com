@@ -8,17 +8,16 @@ use app\index\controller\PublicController;
 use app\index\model\UserInfo;
 use think\db\Query;
 use think\Validate;
-
+use app\common\tool\Verify;
 
 
 class TestController extends PublicController
 {
     public function testLayer()
     {
-        $str = 'Users/Svn/www.blog.com/app/upload/Images/20180202/12c7ef0e20e3553daf2e7dd843688e7d.jpg ';
-        $preg = "/^[0-9]+/";
-        $j = preg_match($preg,$str);
-        return $j;
+        $verify = new Verify;
+        return $verify -> entry();
+        
         // return $this->fetch('/layuitest');
     }
 

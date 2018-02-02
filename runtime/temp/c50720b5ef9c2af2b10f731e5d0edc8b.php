@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:55:"/Users/Svn/www.blog.com/app/index/view/user/secure.html";i:1517385063;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:55:"/Users/Svn/www.blog.com/app/index/view/user/secure.html";i:1517556443;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台安全设置页面 -> lj [2018/01/28] -->
 <html>

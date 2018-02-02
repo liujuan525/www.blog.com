@@ -13,7 +13,7 @@ class ArticleController extends PublicController
      */
     public function detail()
     {
-        return $this->fetch();
+        return $this -> fetch();
     }
 
 

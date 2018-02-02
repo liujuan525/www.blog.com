@@ -23,7 +23,6 @@ class UserInfo extends Model
         $validate = Loader::validate('UserInfo');
         $validate -> scene('add',['userName','password','repassWord','mobile','email']);
         if(!$validate -> scene('add') -> check($data)){
-        // if(!$validate -> check($data)){
             return $validate -> getError();
         }
     }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:57:"/Users/Svn/www.blog.com/app/index/view/website/index.html";i:1517363756;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517363685;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:57:"/Users/Svn/www.blog.com/app/index/view/website/index.html";i:1517363756;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517557023;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
 ﻿
 <!-- 引入头部文件 -->
 <!DOCTYPE html>
@@ -52,6 +52,14 @@
                         echo '<a href="register.html">&nbsp;登录/注册</a>';
                     } ?>
                 </li>
+                <?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                    <img src="/public//index/Images/Absolutely.jpg" class="layui-nav-img">
+                    <?php echo $info['userName']; ?>
+                </a>
+                </li>
+                <?php endif; ?>
                 <!-- 此处为后期添加 -> lj [2018/01/25] -->
             </ul>
             <!-- 手机和平板的导航开关 -->

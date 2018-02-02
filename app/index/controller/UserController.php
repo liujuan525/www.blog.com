@@ -7,9 +7,8 @@ namespace app\index\controller;
 use app\index\controller\PublicController;
 use app\index\model\UserInfo;
 use app\common\PublicMethod;
-use think\Session;
 use think\Db;
-use think\File;
+use think\File; // 图片/文件上传
 
 class UserController extends PublicController
 {
@@ -39,7 +38,7 @@ class UserController extends PublicController
         // 添加用户信息
         $userId = Db::table('blog_user_info') -> insertGetId($data); // 获取主键id
         if($userId){
-            session('uid',$userId); // 设置session
+            $this -> setUid($userId);
             return json(['status' => 1,'msg' => '添加用户信息成功!','info' => $userId]);
         }else{
             return json(['status' => 10003,'msg' => '添加用户信息失败!']);
@@ -57,19 +56,18 @@ class UserController extends PublicController
         if($result){
             return json(['status' => 10004,'msg' => $result]);
         }
-        $param['password'] = PublicMethod::encryptPass($data['password']);
+        $data['password'] = PublicMethod::encryptPass($data['password']);
         $data = Db::table('blog_user_info')
                         -> where('userName',$data['userName'])
-                        // -> where('password',$data['password'])
+                        -> where('password',$data['password'])
                         -> find();
         if($data){
-            $uid = $data['id'];
-            session('uid',$uid);
+            $this -> setUid($data['id']);
             // 增加登录次数
-            $this -> addLoginCount($uid);
+            $this -> addLoginCount($data['id']);
             return json(['status' => 1,'msg' => '登录成功!']);
         }else{
-            return json(['status' => 10005,'msg' => '用户信息不存在!']);
+            return json(['status' => 10005,'msg' => '用户名或密码错误!']);
         }
     }
 
@@ -89,13 +87,12 @@ class UserController extends PublicController
     public function judgeLogin()
     {
         // 获取用户uid
-        $uid = session('uid');
+        $uid = $this -> getUid();
         if($uid){
             // 获取用户信息并跳转到首页
             $info = Db::table('blog_user_info') -> where('id',$uid) -> find();
             if($info){
                 $this -> assign('info',$info);
-                // return $this -> fetch('/home'); // 仅跳转到页面，url没有改变
                 return $this -> redirect('/home'); // 可以改变url地址 
             }else{
                 // 返回错误信息并跳转到登录页面
@@ -116,20 +113,9 @@ class UserController extends PublicController
         $info = Db::table('blog_user_info') -> where('id',$uid) -> find();
         // 获取省信息
         $province = Db::connect('DB_ADDRESS') -> table('province') -> select();
-        
         $this -> assign('userinfo',$info);
         $this -> assign('province',$province);
         return $this -> fetch();
-    }
-
-    /**
-     * 个人中心退出登录 -> lj [2018/01/31]
-     */
-    public function loginOut()
-    {
-        // 清除sessionid
-        session('uid',NULL);
-        $this -> redirect('/');
     }
 
     /**
@@ -144,12 +130,11 @@ class UserController extends PublicController
             return json(['status' => 10006,'msg' => $result]);
         }
         // 获取sessionid
-        $uid = session('uid');
+        $uid = $this -> getUid();
         $info = Db::table('blog_user_info') 
                         -> where('id',$uid) -> find();
         // 修改用户密码
         $originPass = PublicMethod::encryptPass($data['password']);
-
         if($originPass != $info['password']){
             return json(['status' => 10007,'msg' => '密码有误']);
         }else{
@@ -197,7 +182,7 @@ class UserController extends PublicController
         if($result){
             return json(['status' => 10009,'msg' => $result]);
         }
-        $uid = session('uid');
+        $uid = $this -> getUid();
         $data['updateTime'] = date('Y-m-d H:i:s',time());
         $updateResult = Db::table('blog_user_info') 
                                 -> where('id',$uid) -> update($data);
@@ -208,25 +193,12 @@ class UserController extends PublicController
         }
     }
 
-
-
-
-    public function register()
-    {
-        return $this -> fetch();
-    }
-
-    public function login()
-    {
-        return $this -> fetch();
-    }
-
     /**
      * 个人中心安全设置 -> lj [2018/01/31]
      */
     public function secure()
     {
-        $uid = session('uid');
+        $uid = $this -> getUid();
         $info = Db::table('blog_user_info') -> where('id',$uid) -> find();
         $this -> assign('userinfo',$info);
         return $this -> fetch();

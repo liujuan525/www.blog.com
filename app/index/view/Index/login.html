@@ -8,6 +8,8 @@
         <title>不落阁用户登录</title>
         <link rel="stylesheet" href="__PUBLIC__/plug/layui/css/layui.css" media="all">
         <link rel="stylesheet" href="__PUBLIC__/index/Css/login.css">
+        <!-- 验证码插件css -->
+        <link rel="stylesheet" href="__PUBLIC__/plug/verify/css/verify.css">
     </head>
     <body class="beg-login-bg">
         <div class="beg-login-box">
@@ -32,7 +34,15 @@
                         <input type="password" name="password" lay-verify="password" autocomplete="off" placeholder="请输入密码" class="layui-input c-text" id="password">
                     </div>
                     <!-- 验证码 -->
-
+                    <div class="layui-form-item">
+                        <!-- <label class="beg-login-icon">
+                                <i class="layui-icon icon-lock"></i>
+                        </label> -->
+                        <input type="hidden" id="image1" value="__PUBLIC__plug/verify/images/">
+                        <!-- <input type="hidden" id="image1" value="__PUBLIC__plug/verify/images/1.jpg"> -->
+                        <input type="hidden" id="image2" value="__PUBLIC__plug/verify/images/2.jpg">
+                        <div id="verify"></div>
+                    </div>
 
                     <div class="layui-form-item">
                         <button type="button" lay-submit lay-filter="login" class="layui-btn layui-btn-primary c-btn" id="login">登录</button>
@@ -43,6 +53,7 @@
         </div>
         <script type="text/javascript" src="__PUBLIC__/plug/layui/layui.js"></script>
         <script type="text/javascript" src="__PUBLIC__/plug/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/plug/verify/js/verify.min.js"></script>
         <script type="text/javascript">
             $('.layui-form').submit(function(){
                 return false;
@@ -74,7 +85,43 @@
                             }
                         },'json');
                 })
-            })
+            });
+
+            // 获取验证码的图片路径
+            image1 = $("#image1").val();
+            console.log(image1);
+            // 验证码的处理
+            $("#verify").slideVerify({
+                //滑动验证码type=1，拼图验证码type=2
+                type : 2,
+                mode : 'fixed',
+                vOffset : 5,
+                vSpace : 5,
+                explain : '向右滑动完成验证',
+                //拼图验证码或选择验证码图片名称
+                imgUrl : image1,
+                imgName : ['1.jpg','2.jpg'],
+                //拼图验证码的图片尺寸
+                imgSize : {
+                    width: '270px',
+                    height: '100px',
+                },
+                blockSize : {
+                    width: '40px',
+                    height: '40px',
+                },
+                barSize : {
+                    width : '270px',
+                    height : '40px',
+                },
+                success: function(){
+                    alert('验证成功,请输入信息或点击登录!');
+                },
+                error: function(){
+                    alert('验证失败,请重新验证!');
+                    return false;
+                }
+            });
         </script>
     </body>
 

@@ -5,6 +5,7 @@
  */
 namespace app\index\controller;
 use think\Controller;
+use think\Session;
 use think\Db;
 
 class PublicController extends Controller 
@@ -24,10 +25,31 @@ class PublicController extends Controller
      */
     public function getParameter($param)
     {
-        foreach($param as $key=>$value){
+        foreach($param as $key => $value){
             $data["$value"] = input("$value");
         }
         return $data;
+    }
+
+    /**
+     * 获取登录用户id -> lj [2018/02/02]
+     */
+    public function getUid()
+    {
+        return session('uid') ? session('uid') : 0;
+    }
+
+    /**
+     * 记录用户登录的id -> lj [2018/02/02]
+     */
+    public function setUid($uid)
+    {
+        session('uid',$uid);
+    }
+
+    public function clearUid()
+    {
+        session('uid',NULL);
     }
 
     /**
@@ -36,7 +58,7 @@ class PublicController extends Controller
     public function index()
     {
         // 获取用户uid
-        $uid = session('uid');
+        $uid = $this -> getUid();
         if($uid){
             $info = Db::table('blog_user_info')
                             -> where('id',$uid)
@@ -50,14 +72,6 @@ class PublicController extends Controller
             $this->assign('info',0);
         }
         return $this->fetch();
-    }
-
-    /**
-     * 更新修改时间 -> lj [2018/02/02]
-     */
-    protected function updateTime($id,$table)
-    {
-        Db::table("$table") -> where('id',$id) -> update(['updateTime' => now()]);
     }
 
     /**
