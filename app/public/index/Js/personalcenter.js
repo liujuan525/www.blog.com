@@ -142,9 +142,6 @@ layui.use(['element','form','layer','laydate','upload'],function(){
                 console.log(res);
                 if(res.status == 1){
                     portrait = res.info;
-                    // $("#upimage").hide();
-                    // $("#header").show();
-                    // $("#header").attr('src',portrait);
                 }else{
                     layer.msg(res.msg);
                     return false;
@@ -162,7 +159,6 @@ layui.use(['element','form','layer','laydate','upload'],function(){
             var userName = $(":input[name='userName']").val();
             var email = $(":input[name='email']").val();
             var phone = $(":input[name='phone']").val();
-
             var url = 'modifyUserInfo';
             var postData = {userName:userName,portrait:portrait,description:description,
                 sex:gender,email:email,mobile:phone,province:provinceName,

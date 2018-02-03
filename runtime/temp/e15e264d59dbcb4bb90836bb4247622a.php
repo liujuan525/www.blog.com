@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/user/personalCenter.html";i:1517551345;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/user/personalCenter.html";i:1517633287;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台个人中心页面 -> lj [2018/01/26] -->
 <html>
@@ -70,7 +70,7 @@
     
     <!-- 内容主题区域  -->
         <div class="layui-body layui-bg-gray" style="margin-top:3%;">
-            <form class="layui-form" action="">
+            <form class="layui-form" action="" method="post">
                 <!-- 用户名 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户名</label>
@@ -102,9 +102,9 @@
                     <label class="layui-form-label">生日</label>
                     <div class="layui-input-block">
                         <?php if(!(empty($userinfo['birthdate']) || (($userinfo['birthdate'] instanceof \think\Collection || $userinfo['birthdate'] instanceof \think\Paginator ) && $userinfo['birthdate']->isEmpty()))): ?>
-                        <input type="datetime" name="phone" id="birthday" lay-verify="date" class="layui-input user-defined" value="<?php echo $userinfo['birthdate']; ?>">
+                        <input type="datetime" name="birth" id="birthday" lay-verify="date" class="layui-input user-defined" value="<?php echo $userinfo['birthdate']; ?>">
                         <?php else: ?>
-                        <input type="datetime" name="phone" lay-verify="date" class="layui-input user-defined" placeholder="请选择日期" id="birthday">
+                        <input type="datetime" name="birth" lay-verify="date" class="layui-input user-defined" placeholder="请选择日期" id="birthday">
                         <?php endif; ?>
                     </div>
                 </div>

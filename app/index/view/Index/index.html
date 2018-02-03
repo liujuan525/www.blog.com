@@ -196,21 +196,17 @@
             </div>
             <!--右边小栏目-->
             <div class="blog-main-right">
-                <div class="blogerinfo shadow">
-                    <!-- 新增页面显示的判断 -> lj [2-18/01/25] -->
-                    <?php 
-                        if($info){
-                            echo '<div class="blogerinfo-figure">
-                                <img src="__PUBLIC__/index/Images/Absolutely.jpg" alt="Absolutely" />
-                            </div>';
-                        }
-                     ?>
-                    <p class="blogerinfo-nickname">{$info.userName}</p>
-                    <p class="blogerinfo-introduce">{$info.email}</p>
-                    <p class="blogerinfo-location">{$info.mobile}</p>
-                    <hr />
-                    <!-- 新增页面显示的判断 -> lj [2-18/01/25] -->
-                </div>
+                {notempty name="$info"}
+                    <div class="blogerinfo shadow">
+                        <div class="blogerinfo-figure">
+                            <img src="__PUBLIC__/index/Images/Absolutely.jpg" alt="Absolutely" />
+                        </div>
+                        <p class="blogerinfo-nickname">{$info.userName}</p>
+                        <p class="blogerinfo-introduce">{$info.email}</p>
+                        <p class="blogerinfo-location">{$info.mobile}</p>
+                        <hr />
+                    </div>
+                {/notempty}
                 <div></div><!--占位-->
                 <div class="blog-module shadow">
                     <div class="blog-module-title">热文排行</div>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:57:"/Users/Svn/www.blog.com/app/index/view/article/index.html";i:1517324535;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517557409;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:57:"/Users/Svn/www.blog.com/app/index/view/article/index.html";i:1517324535;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517557470;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
 
 <!-- 引入头部文件 -->
 <!DOCTYPE html>

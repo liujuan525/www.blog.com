@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:57:"/Users/Svn/www.blog.com/app/index/view/website/index.html";i:1517363756;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517557023;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:57:"/Users/Svn/www.blog.com/app/index/view/website/index.html";i:1517363756;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517557470;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
 ﻿
 <!-- 引入头部文件 -->
 <!DOCTYPE html>
@@ -46,18 +46,16 @@
                 </li>
                 <!-- 此处为后期添加 -> lj [2018/01/25] -->
                 <li class="layui-nav-item">
-                    <?php if($info){ 
-                        echo '<a href="personalcenter.html"><i class="layui-icon" style="font-size:18px">&#xe60b;</i>&nbsp;个人中心</a>';
-                    }else{
-                        echo '<a href="register.html">&nbsp;登录/注册</a>';
-                    } ?>
-                </li>
                 <?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?>
+                    <a href="personalcenter.html"><i class="layui-icon" style="font-size:18px">&#xe60b;</i>&nbsp;个人中心</a>
+                <?php else: ?>
+                <a href="register.html">&nbsp;登录/注册</a>
+                <?php endif; ?>
+                </li>
+                <!-- 退出登录 -->
+                <?php if(!(empty($info['id']) || (($info['id'] instanceof \think\Collection || $info['id'] instanceof \think\Paginator ) && $info['id']->isEmpty()))): ?>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">
-                    <img src="/public//index/Images/Absolutely.jpg" class="layui-nav-img">
-                    <?php echo $info['userName']; ?>
-                </a>
+                    <a href="loginOut">退出登录</a>
                 </li>
                 <?php endif; ?>
                 <!-- 此处为后期添加 -> lj [2018/01/25] -->

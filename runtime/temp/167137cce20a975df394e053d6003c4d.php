@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"/Users/Svn/www.blog.com/app/index/view/index/index.html";i:1517321255;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517557470;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"/Users/Svn/www.blog.com/app/index/view/index/index.html";i:1517630368;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517557470;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
 
 <!-- 引入头部文件 -->
 <!DOCTYPE html>
@@ -261,21 +261,17 @@
             </div>
             <!--右边小栏目-->
             <div class="blog-main-right">
-                <div class="blogerinfo shadow">
-                    <!-- 新增页面显示的判断 -> lj [2-18/01/25] -->
-                    <?php 
-                        if($info){
-                            echo '<div class="blogerinfo-figure">
-                                <img src="/public//index/Images/Absolutely.jpg" alt="Absolutely" />
-                            </div>';
-                        }
-                     ?>
-                    <p class="blogerinfo-nickname"><?php echo $info['userName']; ?></p>
-                    <p class="blogerinfo-introduce"><?php echo $info['email']; ?></p>
-                    <p class="blogerinfo-location"><?php echo $info['mobile']; ?></p>
-                    <hr />
-                    <!-- 新增页面显示的判断 -> lj [2-18/01/25] -->
-                </div>
+                <?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?>
+                    <div class="blogerinfo shadow">
+                        <div class="blogerinfo-figure">
+                            <img src="/public//index/Images/Absolutely.jpg" alt="Absolutely" />
+                        </div>
+                        <p class="blogerinfo-nickname"><?php echo $info['userName']; ?></p>
+                        <p class="blogerinfo-introduce"><?php echo $info['email']; ?></p>
+                        <p class="blogerinfo-location"><?php echo $info['mobile']; ?></p>
+                        <hr />
+                    </div>
+                <?php endif; ?>
                 <div></div><!--占位-->
                 <div class="blog-module shadow">
                     <div class="blog-module-title">热文排行</div>

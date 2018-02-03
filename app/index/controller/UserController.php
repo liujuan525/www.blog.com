@@ -56,18 +56,21 @@ class UserController extends PublicController
         if($result){
             return json(['status' => 10004,'msg' => $result]);
         }
-        $data['password'] = PublicMethod::encryptPass($data['password']);
-        $data = Db::table('blog_user_info')
+        $info = Db::table('blog_user_info')
                         -> where('userName',$data['userName'])
-                        -> where('password',$data['password'])
                         -> find();
-        if($data){
-            $this -> setUid($data['id']);
-            // 增加登录次数
-            $this -> addLoginCount($data['id']);
-            return json(['status' => 1,'msg' => '登录成功!']);
+        if($info){
+            $loginPass = PublicMethod::encryptPass($data['password']);
+            if($info['password'] != $loginPass){
+                return json(['status' => 10009,'msg' => '密码错误!']);
+            }else{
+                $this -> setUid($info['id']);
+                // 增加登录次数
+                $this -> addLoginCount($info['id']);
+                return json(['status' => 1,'msg' => '登录成功!']); 
+            }
         }else{
-            return json(['status' => 10005,'msg' => '用户名或密码错误!']);
+            return json(['status' => 10005,'msg' => '用户名不存在!']);
         }
     }
 
@@ -93,7 +96,7 @@ class UserController extends PublicController
             $info = Db::table('blog_user_info') -> where('id',$uid) -> find();
             if($info){
                 $this -> assign('info',$info);
-                return $this -> redirect('/home'); // 可以改变url地址 
+                return $this -> redirect('/'); // 可以改变url地址 
             }else{
                 // 返回错误信息并跳转到登录页面
                 return $this -> error('用户信息不存在!','/indexLogin');
@@ -158,8 +161,8 @@ class UserController extends PublicController
         if($file){
             $info = $file -> rule('unique') -> validate(['size' => 512000,'ext' => 'jpg,png,jpeg','type' => 'image/jpeg,image/png']) -> move(ROOT_PATH.self::PORTRAIT_SAVE_PATH);
             if($info){
-                $savename = $info -> getSaveName(); // 保存文件路径
-                $filename = self::PORTRAIT_SAVE_PATH.$savename;
+                $filename = $info -> getSaveName(); // 保存文件路径
+                // $filename = self::PORTRAIT_SAVE_PATH.$savename;
                 // $filename = $info -> getFilename(); // 保存文件名称
                 // $filename = $info -> getPathname(); // 保存文件全路径
                 return json(['status' => 1,'msg' => '保存头像成功','info' => $filename]);

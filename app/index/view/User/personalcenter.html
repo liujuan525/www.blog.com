@@ -69,7 +69,7 @@
     
     <!-- 内容主题区域  -->
         <div class="layui-body layui-bg-gray" style="margin-top:3%;">
-            <form class="layui-form" action="">
+            <form class="layui-form" action="" method="post">
                 <!-- 用户名 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户名</label>
@@ -101,9 +101,9 @@
                     <label class="layui-form-label">生日</label>
                     <div class="layui-input-block">
                         {notempty name="$userinfo.birthdate"}
-                        <input type="datetime" name="phone" id="birthday" lay-verify="date" class="layui-input user-defined" value="{$userinfo.birthdate}">
+                        <input type="datetime" name="birth" id="birthday" lay-verify="date" class="layui-input user-defined" value="{$userinfo.birthdate}">
                         {else/}
-                        <input type="datetime" name="phone" lay-verify="date" class="layui-input user-defined" placeholder="请选择日期" id="birthday">
+                        <input type="datetime" name="birth" lay-verify="date" class="layui-input user-defined" placeholder="请选择日期" id="birthday">
                         {/notempty}
                     </div>
                 </div>

@@ -20,6 +20,7 @@ return [
     'view_replace_str' => [
         '__PUBLIC__' => '/public/',
         '' => '/',
+        '__PORTRAIT__' => '/upload/Images/',
     ],
     // 开启trace调试功能
     'app_trace' => true,

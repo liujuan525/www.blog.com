@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:55:"/Users/Svn/www.blog.com/app/index/view/user/secure.html";i:1517556443;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:55:"/Users/Svn/www.blog.com/app/index/view/user/secure.html";i:1517630542;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台安全设置页面 -> lj [2018/01/28] -->
 <html>
@@ -67,25 +67,25 @@
     
     <!-- 内容主题区域  -->
         <div class="layui-body layui-bg-gray" style="margin-top:5%;">
-            <form class="layui-form" action="">
+            <form class="layui-form" action="" method="post">
                 <!-- 原密码 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">原密码</label>
                     <div class="layui-input-block">
-                        <input type="password" name="password" required lay-verify="required password" placeholder="请输入密码" autocomplete="off" class="layui-input user-defined" id="password">
+                        <input type="password" name="password" required lay-verify="required| password" placeholder="请输入密码" autocomplete="off" class="layui-input user-defined" id="password">
                     </div>
                 </div> 
                 <!-- 修改后的密码 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">新密码</label>
                     <div class="layui-input-block">
-                        <input type="password" name="newpassword" required lay-verify="required password" placeholder="请输入修改后的" autocomplete="off" class="layui-input user-defined" id="newpassword">
+                        <input type="password" name="newpassword" required lay-verify="required |checkPass" placeholder="请输入修改后的密码" autocomplete="off" class="layui-input user-defined" id="newpassword">
                     </div>
                 </div> 
                 <!-- 提交修改或者放弃修改 -->
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button type="button" class="layui-btn" lay-submit lay-filter="formDemo" id="submit">提交</button>
+                        <button type="button" class="layui-btn" lay-submit lay-filter="change" id="change">提交</button>
                         <!-- <button type="reset" class="layui-btn" layui-btn id="reset">重置</button> -->
                     </div>
                     
@@ -112,40 +112,59 @@
     
     <script type="text/javascript">
 
-        $(function(){
-            $("#submit").on('click',function(){
-                var password = $("#password").val();
-                var newpassword = $("#newpassword").val();
-                if(!password){
-                    alert('密码不能为空');
-                    return false;
-                }
-                if(!newpassword){
-                    alert('修改密码不能为空');
-                    return false;
-                }
-                if(password == newpassword){
-                    alert('两次输入的密码不能一致');
-                    return false;
-                }
+        layui.use(['form','layer'],function(){
+            var layer = layui.layer;
+            var form = layui.form;
+            var $ = layui.jquery;
 
-                $.post(
-                    'changePass', 
-                    {password:password,newpassword:newpassword},
-                    function(result){
-                        if(result.status == 1){
-                            console.log(result);
-                            alert(result.msg);
-                            location.href = 'securesetting';
-                        }else{
-                            alert(result.msg);
-                            return false;
-                        }
-                    },'json')
+            // 自定义验证规则
+            form.verify({
+                checkPass: [
+                    // /^[\S]{6,12}$/
+                    /^[a-z0-9_-]{6,18}$/
+                    ,'密码必须由字母或数字组成的6到18位'
+                ] 
             });
 
+            // 监听事件
+            form.on('submit(change)',function(data){
+                $("#change").on('click',function(){
+                    var password = $("#password").val();
+                    var newpassword = $("#newpassword").val();
+                    if(!password){
+                        layer.msg('密码不能为空');
+                        return false;
+                    }
+                    if(!newpassword){
+                        layer.msg('修改密码不能为空');
+                        return false;
+                    }
+                    if(password == newpassword){
+                        layer.msg('两次输入的密码不能一致');
+                        return false;
+                    }
+
+                    $.post(
+                        'changePass', 
+                        {password:password,newpassword:newpassword},
+                        function(result){
+                            if(result.status == 1){
+                                console.log(result);
+                                // layer.msg(result.msg);
+                                alert(result.msg);
+                                location.href = 'securesetting';
+                            }else{
+                                layer.msg(result.msg);
+                                return false;
+                            }
+                        },'json')
+                });
+
+            });
+
+
+
         });
-        
 
     </script>
 
