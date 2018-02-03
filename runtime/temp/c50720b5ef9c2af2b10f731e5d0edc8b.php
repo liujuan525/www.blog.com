@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:55:"/Users/Svn/www.blog.com/app/index/view/user/secure.html";i:1517630542;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:55:"/Users/Svn/www.blog.com/app/index/view/user/secure.html";i:1517673069;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台安全设置页面 -> lj [2018/01/28] -->
 <html>
@@ -41,7 +41,11 @@
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">
+                    <?php if(!(empty($userinfo['portrait']) || (($userinfo['portrait'] instanceof \think\Collection || $userinfo['portrait'] instanceof \think\Paginator ) && $userinfo['portrait']->isEmpty()))): ?>
+                    <img src="/upload/Images/<?php echo $userinfo['portrait']; ?>" style="width:25px;height:25px;">
+                    <?php else: ?>
                     <img src="/public//index/Images/Absolutely.jpg" class="layui-nav-img">
+                    <?php endif; ?>
                     <?php echo $userinfo['userName']; ?>
                 </a>
                 </li>

@@ -40,7 +40,11 @@
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">
+                    {notempty name="$userinfo.portrait"}
+                    <img src="__PORTRAIT__{$userinfo.portrait}" style="width:25px;height:25px;">
+                    {else/}
                     <img src="__PUBLIC__/index/Images/Absolutely.jpg" class="layui-nav-img">
+                    {/notempty}
                     {$userinfo.userName}
                 </a>
                 </li>
@@ -80,6 +84,9 @@
                 <!-- 头像 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">上传头像</label>
+                    {notempty name="$userinfo.portrait"}
+                    <image src="__PORTRAIT__{$userinfo.portrait}" style="width:200px;height:200px;">
+                    {/notempty}
                     <input class="layui-icon" type="file" name="image" id="upimage">
                 </div> 
                 <!-- 邮箱 -->

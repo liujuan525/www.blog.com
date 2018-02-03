@@ -122,19 +122,6 @@ layui.use(['element','form','layer','laydate','upload'],function(){
         });
 
         // 上传头像
-        // var uploadInst = upload.render({
-        //     elem: "#upimage",
-        //     url: 'uploadImage',
-        //     auto: true,
-        //     choose: function(obj){
-        //         obj.preview(function(index,file,result){
-        //             console.log(file);
-        //             console.log(result);
-        //             $("#upimage").attr('src',result.info);
-        //         })
-        //     }
-        // });
-
         var uploadInst = upload.render({
             elem: "#upimage",
             url: 'uploadImage',

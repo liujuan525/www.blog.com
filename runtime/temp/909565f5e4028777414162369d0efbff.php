@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:55:"/Users/Svn/www.blog.com/app/index/view/index/login.html";i:1517585076;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:55:"/Users/Svn/www.blog.com/app/index/view/index/login.html";i:1517628573;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台用户登录页面 -> lj [2018/01/26] -->
 <html>
@@ -61,14 +61,6 @@
                     <button class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal"> 
                         <a href="/">返回首页</a>
                     </button>
-                    <!-- <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                        <li class="layui-nav-item layui-nav-itemed">
-                          
-                        </li>
-                        <li class="layui-nav-item">
-                            <a href="/">返回首页</a>
-                        </li>
-                    </ul> -->
                 </div>
             </div>
             

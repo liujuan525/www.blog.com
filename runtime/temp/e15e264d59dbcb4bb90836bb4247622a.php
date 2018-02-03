@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/user/personalCenter.html";i:1517633287;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"/Users/Svn/www.blog.com/app/index/view/user/personalCenter.html";i:1517673038;}*/ ?>
 <!DOCTYPE html>
 <!-- 前台个人中心页面 -> lj [2018/01/26] -->
 <html>
@@ -41,7 +41,11 @@
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">
+                    <?php if(!(empty($userinfo['portrait']) || (($userinfo['portrait'] instanceof \think\Collection || $userinfo['portrait'] instanceof \think\Paginator ) && $userinfo['portrait']->isEmpty()))): ?>
+                    <img src="/upload/Images/<?php echo $userinfo['portrait']; ?>" style="width:25px;height:25px;">
+                    <?php else: ?>
                     <img src="/public//index/Images/Absolutely.jpg" class="layui-nav-img">
+                    <?php endif; ?>
                     <?php echo $userinfo['userName']; ?>
                 </a>
                 </li>
@@ -81,6 +85,9 @@
                 <!-- 头像 -->
                 <div class="layui-form-item">
                     <label class="layui-form-label">上传头像</label>
+                    <?php if(!(empty($userinfo['portrait']) || (($userinfo['portrait'] instanceof \think\Collection || $userinfo['portrait'] instanceof \think\Paginator ) && $userinfo['portrait']->isEmpty()))): ?>
+                    <image src="/upload/Images/<?php echo $userinfo['portrait']; ?>" style="width:200px;height:200px;">
+                    <?php endif; ?>
                     <input class="layui-icon" type="file" name="image" id="upimage">
                 </div> 
                 <!-- 邮箱 -->

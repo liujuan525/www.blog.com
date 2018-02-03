@@ -25,8 +25,12 @@ class PublicController extends Controller
      */
     public function getParameter($param)
     {
+        $data = [];
         foreach($param as $key => $value){
-            $data["$value"] = input("$value");
+            $getValue = input("$value");
+            if(!empty($getValue)) {
+                $data["$value"] = $getValue;
+            }
         }
         return $data;
     }

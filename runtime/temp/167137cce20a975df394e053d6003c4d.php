@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"/Users/Svn/www.blog.com/app/index/view/index/index.html";i:1517630368;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517557470;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:55:"/Users/Svn/www.blog.com/app/index/view/index/index.html";i:1517669472;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/header.html";i:1517557470;s:57:"/Users/Svn/www.blog.com/app/index/view/Common/footer.html";i:1517321044;}*/ ?>
 
 <!-- 引入头部文件 -->
 <!DOCTYPE html>
@@ -264,7 +264,11 @@
                 <?php if(!(empty($info) || (($info instanceof \think\Collection || $info instanceof \think\Paginator ) && $info->isEmpty()))): ?>
                     <div class="blogerinfo shadow">
                         <div class="blogerinfo-figure">
+                            <?php if(!(empty($info['portrait']) || (($info['portrait'] instanceof \think\Collection || $info['portrait'] instanceof \think\Paginator ) && $info['portrait']->isEmpty()))): ?>
+                            <img src="/upload/Images/<?php echo $info['portrait']; ?>" style="width:100px;height:100px;" alt="Absolutely" />
+                            <?php else: ?>
                             <img src="/public//index/Images/Absolutely.jpg" alt="Absolutely" />
+                            <?php endif; ?>
                         </div>
                         <p class="blogerinfo-nickname"><?php echo $info['userName']; ?></p>
                         <p class="blogerinfo-introduce"><?php echo $info['email']; ?></p>

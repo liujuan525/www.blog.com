@@ -129,7 +129,7 @@ class UserController extends PublicController
         // 校验数据
         $data = $this -> getParameter(['password','newpassword']);
         $result = $user -> changePass($data);
-        if($result){
+        if($result) {
             return json(['status' => 10006,'msg' => $result]);
         }
         // 获取sessionid
@@ -138,7 +138,7 @@ class UserController extends PublicController
                         -> where('id',$uid) -> find();
         // 修改用户密码
         $originPass = PublicMethod::encryptPass($data['password']);
-        if($originPass != $info['password']){
+        if($originPass != $info['password']) {
             return json(['status' => 10007,'msg' => '密码有误']);
         }else{
             $newPass = PublicMethod::encryptPass($data['newpassword']);
@@ -182,14 +182,14 @@ class UserController extends PublicController
     {
         $data = $this -> getParameter(['userName','portrait','description','sex','email','mobile','province','city','country','address','birthdate']);
         $result = $user -> modifyInfo($data);
-        if($result){
+        if($result) {
             return json(['status' => 10009,'msg' => $result]);
         }
         $uid = $this -> getUid();
-        $data['updateTime'] = date('Y-m-d H:i:s',time());
+        $data['updateTime'] = date('Y-m-d H:i:s', time());
         $updateResult = Db::table('blog_user_info') 
                                 -> where('id',$uid) -> update($data);
-        if($updateResult){
+        if($updateResult) {
             return json(['status' => 1,'msg' => '修改信息成功']);
         }else{
             return json(['status' => 10011,'msg' => '修改信息失败']);

@@ -199,7 +199,11 @@
                 {notempty name="$info"}
                     <div class="blogerinfo shadow">
                         <div class="blogerinfo-figure">
+                            {notempty name="$info.portrait"}
+                            <img src="__PORTRAIT__{$info.portrait}" style="width:100px;height:100px;" alt="Absolutely" />
+                            {else/}
                             <img src="__PUBLIC__/index/Images/Absolutely.jpg" alt="Absolutely" />
+                            {/notempty}
                         </div>
                         <p class="blogerinfo-nickname">{$info.userName}</p>
                         <p class="blogerinfo-introduce">{$info.email}</p>
